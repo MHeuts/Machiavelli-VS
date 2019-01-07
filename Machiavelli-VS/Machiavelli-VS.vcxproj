@@ -23,7 +23,7 @@
     <ProjectGuid>{5FA7B62C-C5E3-4961-AA26-B064F9A2A01B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>MachiavelliVS</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -151,16 +151,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Card.h" />
     <ClInclude Include="CircularBuffer.h" />
     <ClInclude Include="ClientCommand.h" />
     <ClInclude Include="ClientInfo.h" />
+    <ClInclude Include="Filereader.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="playerCard.h" />
     <ClInclude Include="Socket.h" />
     <ClInclude Include="Sync_queue.h" />
     <ClInclude Include="throw.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Filereader.cpp" />
     <ClCompile Include="Machiavelli-VS.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

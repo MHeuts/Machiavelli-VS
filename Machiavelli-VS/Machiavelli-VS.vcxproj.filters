@@ -57,6 +57,15 @@
     <ClInclude Include="Sync_queue.h">
       <Filter>Header Files\Network</Filter>
     </ClInclude>
+    <ClInclude Include="Card.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="Filereader.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="playerCard.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -73,6 +82,9 @@
     </ClCompile>
     <ClCompile Include="Socket.cpp">
       <Filter>Source Files\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Filereader.cpp">
+      <Filter>Source Files\Domain</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
