@@ -31,6 +31,18 @@
     <Filter Include="Source Files\Utilities">
       <UniqueIdentifier>{8041dcc9-5842-4765-9137-0b0f35637bef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Domain\Abilities">
+      <UniqueIdentifier>{9bada3a8-d433-411c-8b92-870008861bd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Domain\Abilities">
+      <UniqueIdentifier>{747e6e0a-278c-4c70-8312-c2e0b69f19d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Domain\States">
+      <UniqueIdentifier>{4828052d-dfe3-45f6-b4b3-74a64440e5fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Domain\States">
+      <UniqueIdentifier>{07db353a-db09-44cb-80a2-2f036a32e010}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -57,6 +69,57 @@
     <ClInclude Include="Sync_queue.h">
       <Filter>Header Files\Network</Filter>
     </ClInclude>
+    <ClInclude Include="Building.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="ColourEnum.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="Ability.h">
+      <Filter>Header Files\Domain\Abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="AssassinAbility.h">
+      <Filter>Header Files\Domain\Abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="ThiefAbility.h">
+      <Filter>Header Files\Domain\Abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="MagicianAbility.h">
+      <Filter>Header Files\Domain\Abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="KingAbility.h">
+      <Filter>Header Files\Domain\Abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="BishopAbility.h">
+      <Filter>Header Files\Domain\Abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="MerchantAbility.h">
+      <Filter>Header Files\Domain\Abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="ArchitectAbility.h">
+      <Filter>Header Files\Domain\Abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="WarlordAbility.h">
+      <Filter>Header Files\Domain\Abilities</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseState.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
+    <ClInclude Include="AssassinationState.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
+    <ClInclude Include="StateMachine.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
+    <ClInclude Include="TurnState.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -73,6 +136,12 @@
     </ClCompile>
     <ClCompile Include="Socket.cpp">
       <Filter>Source Files\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="AssassinAbility.cpp">
+      <Filter>Source Files\Domain\Abilities</Filter>
+    </ClCompile>
+    <ClCompile Include="SatateMachine.cpp">
+      <Filter>Source Files\Domain\States</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -151,16 +151,34 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Ability.h" />
+    <ClInclude Include="ArchitectAbility.h" />
+    <ClInclude Include="AssassinAbility.h" />
+    <ClInclude Include="AssassinationState.h" />
+    <ClInclude Include="BaseState.h" />
+    <ClInclude Include="BishopAbility.h" />
+    <ClInclude Include="Building.h" />
+    <ClInclude Include="Character.h" />
     <ClInclude Include="CircularBuffer.h" />
     <ClInclude Include="ClientCommand.h" />
     <ClInclude Include="ClientInfo.h" />
+    <ClInclude Include="ColourEnum.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="KingAbility.h" />
+    <ClInclude Include="MagicianAbility.h" />
+    <ClInclude Include="MerchantAbility.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Socket.h" />
+    <ClInclude Include="StateMachine.h" />
     <ClInclude Include="Sync_queue.h" />
+    <ClInclude Include="ThiefAbility.h" />
     <ClInclude Include="throw.h" />
+    <ClInclude Include="TurnState.h" />
+    <ClInclude Include="WarlordAbility.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AssassinAbility.cpp" />
     <ClCompile Include="Machiavelli-VS.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -169,6 +187,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="SatateMachine.cpp" />
     <ClCompile Include="Socket.cpp" />
     <ClCompile Include="throw.cpp" />
   </ItemGroup>
