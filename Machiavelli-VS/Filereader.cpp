@@ -1,10 +1,9 @@
 #include "pch.h"
-#include "Filereader.h"
+#include "file_reader.h"
 #include <fstream>
 #include <algorithm>
 #include <sstream>
-#include <iostream>
-#include <iterator>
+#include "color_enum.h"
 
 building_card filereader::create_building_card(std::vector<std::string> attributes) const
 {

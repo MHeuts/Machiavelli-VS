@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
-#include "Card.h"
-#include "playerCard.h"
+#include "building_card.h"
+#include "player_card.h"
 
 class filereader
 {

@@ -14,13 +14,13 @@
 #include <memory>
 #include <utility>
 #include <chrono>
-#include "Filereader.h"
+#include "file_reader.h"
 using namespace std;
 
 #include "Socket.h"
 #include "Sync_queue.h"
 #include "ClientCommand.h"
-#include "Player.h"
+#include "player.h"
 #include "ClientInfo.h"
 
 namespace machiavelli {
@@ -134,8 +134,8 @@ int main(int argc, const char * argv[])
 	try {
 		cerr << "server listening" << '\n';
 		filereader fr;
-		fr.read_building_cards();
-		fr.read_player_cards();
+		auto test = fr.read_building_cards();
+		auto test2 = fr.read_player_cards();
 		while (running) {
 			// wait for connection from client; will create new socket
 			server.accept([&all_threads](Socket client) {

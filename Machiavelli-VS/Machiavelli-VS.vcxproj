@@ -151,14 +151,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Card.h" />
+    <ClInclude Include="building_card.h" />
     <ClInclude Include="CircularBuffer.h" />
     <ClInclude Include="ClientCommand.h" />
     <ClInclude Include="ClientInfo.h" />
-    <ClInclude Include="Filereader.h" />
+    <ClInclude Include="color_enum.h" />
+    <ClInclude Include="deck.h" />
+    <ClInclude Include="file_reader.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="playerCard.h" />
+    <ClInclude Include="player.h" />
+    <ClInclude Include="player_card.h" />
     <ClInclude Include="Socket.h" />
     <ClInclude Include="Sync_queue.h" />
     <ClInclude Include="throw.h" />
