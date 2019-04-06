@@ -168,6 +168,7 @@
     <ClInclude Include="Building.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameOverState.h" />
     <ClInclude Include="KingAbility.h" />
     <ClInclude Include="LobbyState.h" />
     <ClInclude Include="MagicianAbility.h" />
@@ -186,6 +187,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="deck.cpp" />
+    <ClCompile Include="DrawCharacterState.cpp" />
     <ClCompile Include="file_reader.cpp" />
     <ClCompile Include="AssassinAbility.cpp" />
     <ClCompile Include="Game.cpp" />

@@ -20,7 +20,8 @@ public:
 	{
 		stateStack.back()->Leave();
 		stateStack.pop_back();
-		stateStack.back()->Resume();
+		if(stateStack.size() > 0)
+			stateStack.back()->Resume();
 	}
 
 	void handle_command(const ClientCommand& command)
