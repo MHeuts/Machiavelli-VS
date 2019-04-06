@@ -158,17 +158,34 @@
     <ClInclude Include="color_enum.h" />
     <ClInclude Include="deck.h" />
     <ClInclude Include="file_reader.h" />
+    <ClInclude Include="Ability.h" />
+    <ClInclude Include="ArchitectAbility.h" />
+    <ClInclude Include="AssassinAbility.h" />
+    <ClInclude Include="AssassinationState.h" />
+    <ClInclude Include="BaseState.h" />
+    <ClInclude Include="BishopAbility.h" />
+    <ClInclude Include="Building.h" />
+    <ClInclude Include="Character.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="KingAbility.h" />
+    <ClInclude Include="MagicianAbility.h" />
+    <ClInclude Include="MerchantAbility.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="player_card.h" />
     <ClInclude Include="random.h" />
     <ClInclude Include="Socket.h" />
+    <ClInclude Include="StateMachine.h" />
     <ClInclude Include="Sync_queue.h" />
+    <ClInclude Include="ThiefAbility.h" />
     <ClInclude Include="throw.h" />
+    <ClInclude Include="TurnState.h" />
+    <ClInclude Include="WarlordAbility.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="deck.cpp" />
     <ClCompile Include="file_reader.cpp" />
+    <ClCompile Include="AssassinAbility.cpp" />
     <ClCompile Include="Machiavelli-VS.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -177,6 +194,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="SatateMachine.cpp" />
     <ClCompile Include="Socket.cpp" />
     <ClCompile Include="throw.cpp" />
   </ItemGroup>
