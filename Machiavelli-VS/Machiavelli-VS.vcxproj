@@ -161,12 +161,14 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="player_card.h" />
+    <ClInclude Include="random.h" />
     <ClInclude Include="Socket.h" />
     <ClInclude Include="Sync_queue.h" />
     <ClInclude Include="throw.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Filereader.cpp" />
+    <ClCompile Include="deck.cpp" />
+    <ClCompile Include="file_reader.cpp" />
     <ClCompile Include="Machiavelli-VS.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

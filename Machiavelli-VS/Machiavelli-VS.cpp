@@ -15,6 +15,7 @@
 #include <utility>
 #include <chrono>
 #include "file_reader.h"
+#include "deck.h"
 using namespace std;
 
 #include "Socket.h"
@@ -133,9 +134,10 @@ int main(int argc, const char * argv[])
 	ServerSocket server{ machiavelli::tcp_port };
 	try {
 		cerr << "server listening" << '\n';
-		filereader fr;
-		auto test = fr.read_building_cards();
-		auto test2 = fr.read_player_cards();
+
+		//test deck
+		//deck deck;
+		//deck.get_card();
 		while (running) {
 			// wait for connection from client; will create new socket
 			server.accept([&all_threads](Socket client) {

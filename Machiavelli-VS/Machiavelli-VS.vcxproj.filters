@@ -72,6 +72,9 @@
     <ClInclude Include="deck.h">
       <Filter>Header Files\Domain</Filter>
     </ClInclude>
+    <ClInclude Include="random.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -89,7 +92,10 @@
     <ClCompile Include="Socket.cpp">
       <Filter>Source Files\Network</Filter>
     </ClCompile>
-    <ClCompile Include="Filereader.cpp">
+    <ClCompile Include="deck.cpp">
+      <Filter>Source Files\Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="file_reader.cpp">
       <Filter>Source Files\Domain</Filter>
     </ClCompile>
   </ItemGroup>

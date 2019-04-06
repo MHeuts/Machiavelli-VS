@@ -7,7 +7,7 @@
 
 building_card filereader::create_building_card(std::vector<std::string> attributes) const
 {
-	color color = {};
+	color color{};
 	if (attributes[2] == "geel") color = YELLOW;
 	if (attributes[2] == "groen") color = GREEN;
 	if (attributes[2] == "blauw") color = BLUE;
