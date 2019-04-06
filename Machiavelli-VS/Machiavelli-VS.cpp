@@ -16,6 +16,7 @@
 #include <chrono>
 #include "file_reader.h"
 #include "deck.h"
+#include "Game.h"
 using namespace std;
 
 #include "Socket.h"
@@ -42,6 +43,8 @@ void consume_command() // runs in its own thread
 				auto &client = clientInfo->get_socket();
 				auto &player = clientInfo->get_player();
 				try {
+					Game::instance()->HandleClientCommand(command);
+
 					// TODO handle command here
 					client << player.get_name() << ", you wrote: '" << command.get_cmd() << "', but I'll ignore that for now.\r\n" << machiavelli::prompt;
 				}

@@ -7,7 +7,7 @@ private:
 public:
 	Game() = default;;
 	~Game() = default;
-	void HandleClientCommand(std::shared_ptr<ClientCommand>& command);
+	void HandleClientCommand(ClientCommand& command);
 
 	static std::shared_ptr<Game> instance();
 

@@ -2,10 +2,12 @@
 #include "Game.h"
 #include "ClientInfo.h"
 
-void Game::HandleClientCommand(std::shared_ptr<ClientCommand>& command) {
-	if (auto clientInfo = command->get_client_info().lock()) {
+void Game::HandleClientCommand(ClientCommand& command) {
+
+	if (auto clientInfo = command.get_client_info().lock()) {
+
 		auto &client = clientInfo->get_socket();
-		client << "test";
+		client << "test\n";
 	}
 }
 
