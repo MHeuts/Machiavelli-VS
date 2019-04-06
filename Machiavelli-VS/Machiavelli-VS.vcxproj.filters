@@ -138,6 +138,9 @@
     <ClInclude Include="LobbyState.h">
       <Filter>Header Files\Domain\States</Filter>
     </ClInclude>
+    <ClInclude Include="DrawCharacterState.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">

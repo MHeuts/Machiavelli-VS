@@ -157,6 +157,7 @@
     <ClInclude Include="ClientInfo.h" />
     <ClInclude Include="color_enum.h" />
     <ClInclude Include="deck.h" />
+    <ClInclude Include="DrawCharacterState.h" />
     <ClInclude Include="file_reader.h" />
     <ClInclude Include="Ability.h" />
     <ClInclude Include="ArchitectAbility.h" />

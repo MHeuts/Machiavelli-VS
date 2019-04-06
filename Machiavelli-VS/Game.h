@@ -7,7 +7,7 @@ private:
 
 	StateMachine stateMachine;
 public:
-	Game() = default;;
+	Game();
 	~Game() = default;
 	void HandleClientCommand(const ClientCommand& command);
 

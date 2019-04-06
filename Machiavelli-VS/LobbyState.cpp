@@ -10,15 +10,6 @@ void LobbyState::handle_command(const ClientCommand& command)
         game->setup();
         return;
     }
-
-	
-
-	const auto client = command.get_client_info().lock();
-
-	if (auto clientInfo = command.get_client_info().lock()) {
-
-		auto &client = clientInfo->get_socket();
-		client << "test\n";
-	}
+	command.get_client_info().lock()->get_socket() << "waiting For players";
 }
 

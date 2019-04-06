@@ -8,13 +8,11 @@ private:
 	std::vector<std::shared_ptr<BaseState>> stateStack;
 public:
 	std::shared_ptr<BaseState> CurrentState();
-	void pushState(std::shared_ptr<BaseState>);
 
 	template<class T, class ...TArgs>
 	void push_state(TArgs &&...args) 
 	{
-
-		stateStack.push_back(new T(std::forward<TArgs>(args)...));
+		stateStack.emplace_back(new T(std::forward<TArgs>(args)...));
 		stateStack.back()->Enter();
 	}
 

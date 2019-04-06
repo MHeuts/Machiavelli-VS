@@ -1,6 +1,13 @@
 #include "pch.h"
 #include "Game.h"
 #include "ClientInfo.h"
+#include "LobbyState.h"
+#include "DrawCharacterState.h"
+
+Game::Game()
+{
+	stateMachine.push_state<LobbyState>();
+}
 
 void Game::HandleClientCommand(const ClientCommand& command) {
 
@@ -12,7 +19,6 @@ void Game::HandleClientCommand(const ClientCommand& command) {
 		client << "test\n";
 	}
 }
-
 
 static std::shared_ptr<Game> instance_;
 
@@ -28,4 +34,6 @@ void Game::AddClient(std::weak_ptr<ClientInfo> client)
 
 void Game::setup()
 {
+	stateMachine.pop_state();
+	stateMachine.push_state<DrawCharacterState>();
 }
