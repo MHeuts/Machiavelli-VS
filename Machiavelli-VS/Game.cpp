@@ -30,9 +30,10 @@ void Game::AddClient(std::weak_ptr<ClientInfo> client)
 
 void Game::setup()
 {
+	clients[0].lock()->get_player().setKing(true);
 	running_ = true;
 	//shuffleBuildings();
-
+	deck_.BuildDeck();
 	stateMachine.pop_state();
 	stateMachine.push_state<DrawCharacterState>();
 }

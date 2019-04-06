@@ -22,6 +22,8 @@ public:
 
 	std::string get_name() const { return name; }
 	void set_name(const std::string& new_name) { name = new_name; }
+	void setKing(bool king) { isKing_ = king; }
+	bool isKing() const { return isKing_; }
 
 private:
 	std::string name;
@@ -29,6 +31,7 @@ private:
 	std::vector<Character> _characterHand;
 	std::vector<Building> _buildingHand;
 	std::vector<Building> _city;
+	bool isKing_{ false };
 };
 
 #endif /* Player_hpp */

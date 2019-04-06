@@ -18,6 +18,15 @@ building_card deck::get_card()
 	return card;
 }
 
+void deck::BuildDeck()
+{
+	building_cards_.clear();
+
+	filereader fr;
+	building_cards_ = fr.read_building_cards();
+	shuffle();
+}
+
 void deck::shuffle()
 {
 	std::random_shuffle(building_cards_.begin(), building_cards_.end());

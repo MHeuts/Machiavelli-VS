@@ -8,8 +8,8 @@ class deck
 {
 	std::vector<building_card> building_cards_;
 	std::vector<player_card> player_cards_;
-
 	void shuffle();
+
 public:
 	deck();
 
@@ -17,7 +17,9 @@ public:
 		: building_cards_(std::move(building_cards)), player_cards_(std::move(player_cards)) 
 	{
 		shuffle();
-	};
+	}
+
+	void BuildDeck();
 
 	building_card get_card();
 	std::vector<building_card>& get_building_cards() { return building_cards_; };
