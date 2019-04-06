@@ -1,9 +1,19 @@
 #pragma once
+#include "Character.h"
 
-#include "player_card.h"
 
-class thief : public player_card
+class thief : public character
 {
+	bool choosing_character = false;
+	void print_stealing_options(Game & game, Player & player);
+	void character_options(Game& game, Player& player) override;
 public:
-	thief(int id, std::string name) : player_card(id, name) {}
+	thief(int order) : character(order) 
+	{
+		name_ = "robber";
+		description_ = "can steal money";
+	}
+
+	void print_options(Game& game, Player& player) override;
+
 };

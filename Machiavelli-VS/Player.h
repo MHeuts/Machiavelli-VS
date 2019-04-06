@@ -26,7 +26,7 @@ public:
 private:
 	std::string name;
 	int _gold;
-	std::vector<Character> _characterHand;
+	std::vector<character> _characterHand;
 	std::vector<Building> _buildingHand;
 	std::vector<Building> _city;
 };

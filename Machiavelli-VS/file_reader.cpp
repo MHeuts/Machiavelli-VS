@@ -36,7 +36,7 @@ std::vector<player_card> filereader::read_player_cards() const
 	{
 		cards.push_back(create_player_card(str));
 		count = 0;
-		card.clear();		
+		card.clear();
 	}
 	return cards;
 }

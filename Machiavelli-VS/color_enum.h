@@ -5,5 +5,6 @@ enum color
 	RED,
 	GREEN,
 	BLUE,
-	YELLOW
+	YELLOW,
+	NONE
 };

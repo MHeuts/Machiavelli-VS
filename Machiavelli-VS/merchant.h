@@ -1,9 +1,15 @@
 #pragma once
+#include "Character.h"
 
-#include "player_card.h"
 
-class mage : public player_card
+class mage : public character
 {
 public:
-	mage(int id, std::string name) : player_card(id, name) {}
+	mage(int order) : character(order)
+	{
+		color_ = GREEN;
+		name_ = "merchant";
+		description_ = "gets 1 extra income and extra from green buildings";
+	}
+	void start_character(Game& game, Player& player) override;
 };

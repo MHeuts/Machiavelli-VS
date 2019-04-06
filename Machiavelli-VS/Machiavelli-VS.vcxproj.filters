@@ -218,5 +218,11 @@
     <ClCompile Include="preacher.cpp">
       <Filter>Source Files\Domain\cards</Filter>
     </ClCompile>
+    <ClCompile Include="character.cpp">
+      <Filter>Source Files\Domain\cards</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

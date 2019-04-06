@@ -2,8 +2,14 @@
 
 #include "player_card.h"
 
-class builder : public player_card
+class builder : public character
 {
 public:
-	builder(int id, std::string name) : player_card(id, name) {}
+	builder(int order) : character(order)
+	{
+		name_ = "builder";
+		description_ = "can draw 2 more cards and can build 3 buildings";
+	}
+
+	void start_character(Game& game, Player& player) override;
 };
