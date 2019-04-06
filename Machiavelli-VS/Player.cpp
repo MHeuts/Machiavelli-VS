@@ -7,5 +7,5 @@
 //
 
 #include "pch.h"
-#include "player.h"
+#include "Player.h"
 using namespace std;

@@ -13,7 +13,7 @@
 #include <utility>
 
 #include "Socket.h"
-#include "player.h"
+#include "Player.h"
 
 class ClientInfo {
 	Socket _socket;

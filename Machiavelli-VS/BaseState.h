@@ -2,7 +2,6 @@
 #include "ClientCommand.h"
 
 class BaseState {
-public:
 	BaseState() = default;
 	~BaseState() = default;
 

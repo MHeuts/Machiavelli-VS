@@ -23,7 +23,7 @@
     <ProjectGuid>{5FA7B62C-C5E3-4961-AA26-B064F9A2A01B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>MachiavelliVS</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -151,13 +151,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="building_card.h" />
-    <ClInclude Include="CircularBuffer.h" />
-    <ClInclude Include="ClientCommand.h" />
-    <ClInclude Include="ClientInfo.h" />
-    <ClInclude Include="color_enum.h" />
-    <ClInclude Include="deck.h" />
-    <ClInclude Include="file_reader.h" />
     <ClInclude Include="Ability.h" />
     <ClInclude Include="ArchitectAbility.h" />
     <ClInclude Include="AssassinAbility.h" />
@@ -166,14 +159,16 @@
     <ClInclude Include="BishopAbility.h" />
     <ClInclude Include="Building.h" />
     <ClInclude Include="Character.h" />
+    <ClInclude Include="CircularBuffer.h" />
+    <ClInclude Include="ClientCommand.h" />
+    <ClInclude Include="ClientInfo.h" />
+    <ClInclude Include="ColourEnum.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="KingAbility.h" />
     <ClInclude Include="MagicianAbility.h" />
     <ClInclude Include="MerchantAbility.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="player.h" />
-    <ClInclude Include="player_card.h" />
-    <ClInclude Include="random.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Socket.h" />
     <ClInclude Include="StateMachine.h" />
     <ClInclude Include="Sync_queue.h" />
@@ -183,8 +178,6 @@
     <ClInclude Include="WarlordAbility.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="deck.cpp" />
-    <ClCompile Include="file_reader.cpp" />
     <ClCompile Include="AssassinAbility.cpp" />
     <ClCompile Include="Machiavelli-VS.cpp" />
     <ClCompile Include="pch.cpp">

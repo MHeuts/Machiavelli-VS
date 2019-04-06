@@ -60,37 +60,22 @@
     <ClInclude Include="ClientInfo.h">
       <Filter>Header Files\Network</Filter>
     </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
     <ClInclude Include="Socket.h">
       <Filter>Header Files\Network</Filter>
     </ClInclude>
     <ClInclude Include="Sync_queue.h">
       <Filter>Header Files\Network</Filter>
     </ClInclude>
-    <ClInclude Include="building_card.h">
-      <Filter>Header Files\Domain</Filter>
-    </ClInclude>
-    <ClInclude Include="file_reader.h">
-      <Filter>Header Files\Domain</Filter>
-    </ClInclude>
-    <ClInclude Include="player.h">
-      <Filter>Header Files\Domain</Filter>
-    </ClInclude>
-    <ClInclude Include="player_card.h">
-      <Filter>Header Files\Domain</Filter>
-    </ClInclude>
-    <ClInclude Include="color_enum.h">
-      <Filter>Header Files\Domain</Filter>
-    </ClInclude>
-    <ClInclude Include="deck.h">
-      <Filter>Header Files\Domain</Filter>
-    </ClInclude>
-    <ClInclude Include="random.h">
-      <Filter>Header Files\Utilities</Filter>
-    </ClInclude>
     <ClInclude Include="Building.h">
       <Filter>Header Files\Domain</Filter>
     </ClInclude>
     <ClInclude Include="Character.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="ColourEnum.h">
       <Filter>Header Files\Domain</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
@@ -151,12 +136,6 @@
     </ClCompile>
     <ClCompile Include="Socket.cpp">
       <Filter>Source Files\Network</Filter>
-    </ClCompile>
-    <ClCompile Include="deck.cpp">
-      <Filter>Source Files\Domain</Filter>
-    </ClCompile>
-    <ClCompile Include="file_reader.cpp">
-      <Filter>Source Files\Domain</Filter>
     </ClCompile>
     <ClCompile Include="AssassinAbility.cpp">
       <Filter>Source Files\Domain\Abilities</Filter>

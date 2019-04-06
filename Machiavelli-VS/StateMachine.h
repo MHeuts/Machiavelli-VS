@@ -4,9 +4,9 @@
 
 class StateMachine {
 private:
-	std::vector<std::shared_ptr<BaseState>> stateStack;
+	std::vector<std::unique_ptr<BaseState>> stateStack;
 public:
-	std::shared_ptr<BaseState> CurrentState();
-	void pushState(std::shared_ptr<BaseState>);
+	std::unique_ptr<BaseState> CurrentState();
+	void pushState(std::unique_ptr<BaseState>);
 	void popState();
 };
