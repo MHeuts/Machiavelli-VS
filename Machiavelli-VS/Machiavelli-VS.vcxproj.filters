@@ -135,6 +135,15 @@
     <ClInclude Include="TurnState.h">
       <Filter>Header Files\Domain\States</Filter>
     </ClInclude>
+    <ClInclude Include="LobbyState.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawCharacterState.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOverState.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -162,6 +171,15 @@
       <Filter>Source Files\Domain\Abilities</Filter>
     </ClCompile>
     <ClCompile Include="SatateMachine.cpp">
+      <Filter>Source Files\Domain\States</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files\Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="LobbyState.cpp">
+      <Filter>Source Files\Domain\States</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawCharacterState.cpp">
       <Filter>Source Files\Domain\States</Filter>
     </ClCompile>
   </ItemGroup>

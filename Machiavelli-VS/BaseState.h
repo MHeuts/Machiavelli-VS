@@ -1,5 +1,6 @@
 #pragma once
 #include "ClientCommand.h"
+#include "ClientInfo.h"
 
 class BaseState {
 public:
@@ -8,6 +9,7 @@ public:
 
 	virtual void Enter() {};
 	virtual void Leave() {};
+	virtual void Resume() {};
 	virtual void display(std::shared_ptr<ClientInfo>& client) {};
-	virtual void handle_command(std::shared_ptr<ClientCommand>& command) {};
+	virtual void handle_command(const ClientCommand& command) {};
 };
