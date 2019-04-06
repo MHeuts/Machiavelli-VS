@@ -168,6 +168,7 @@
     <ClInclude Include="Character.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="KingAbility.h" />
+    <ClInclude Include="LobbyState.h" />
     <ClInclude Include="MagicianAbility.h" />
     <ClInclude Include="MerchantAbility.h" />
     <ClInclude Include="pch.h" />
@@ -187,6 +188,7 @@
     <ClCompile Include="file_reader.cpp" />
     <ClCompile Include="AssassinAbility.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="LobbyState.cpp" />
     <ClCompile Include="Machiavelli-VS.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

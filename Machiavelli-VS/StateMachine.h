@@ -2,6 +2,7 @@
 #include <vector>
 #include "BaseState.h"
 
+
 class StateMachine {
 private:
 	std::vector<std::shared_ptr<BaseState>> stateStack;
@@ -24,7 +25,7 @@ public:
 		stateStack.back()->Resume();
 	}
 
-	void handle_command(ClientCommand& command)
+	void handle_command(const ClientCommand& command)
 	{
 		stateStack.back()->handle_command(command);
 	}
