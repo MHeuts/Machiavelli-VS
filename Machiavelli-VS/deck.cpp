@@ -18,6 +18,15 @@ building_card deck::get_card()
 	return card;
 }
 
+std::vector<building_card> deck::get_cards(int ammount)
+{
+	std::vector<building_card> cards;
+	auto it = std::next(building_cards_.begin(), ammount);
+	std::move(building_cards_.begin(), it, std::back_inserter(cards));
+	building_cards_.erase(building_cards_.begin(), it);
+	return cards;
+}
+
 void deck::BuildDeck()
 {
 	building_cards_.clear();
