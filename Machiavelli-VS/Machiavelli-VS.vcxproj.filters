@@ -164,5 +164,8 @@
     <ClCompile Include="SatateMachine.cpp">
       <Filter>Source Files\Domain\States</Filter>
     </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files\Domain</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
