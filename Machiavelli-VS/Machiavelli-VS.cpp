@@ -14,12 +14,14 @@
 #include <memory>
 #include <utility>
 #include <chrono>
+#include "file_reader.h"
+#include "deck.h"
 using namespace std;
 
 #include "Socket.h"
 #include "Sync_queue.h"
 #include "ClientCommand.h"
-#include "Player.h"
+#include "player.h"
 #include "ClientInfo.h"
 
 namespace machiavelli {
@@ -130,9 +132,12 @@ int main(int argc, const char * argv[])
 
 	// create a server socket
 	ServerSocket server{ machiavelli::tcp_port };
-
 	try {
 		cerr << "server listening" << '\n';
+
+		//test deck
+		//deck deck;
+		//deck.get_card();
 		while (running) {
 			// wait for connection from client; will create new socket
 			server.accept([&all_threads](Socket client) {
