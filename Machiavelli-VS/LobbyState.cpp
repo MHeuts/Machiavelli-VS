@@ -12,4 +12,3 @@ void LobbyState::handle_command(const ClientCommand& command)
     }
 	command.get_client_info().lock()->get_socket() << "waiting For players";
 }
-
