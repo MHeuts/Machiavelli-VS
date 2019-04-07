@@ -207,6 +207,7 @@
     <ClCompile Include="filereader.cpp" />
     <ClCompile Include="draw_character_state.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="game_over_state.cpp" />
     <ClCompile Include="king.cpp" />
     <ClCompile Include="lobby_state.cpp" />
     <ClCompile Include="Machiavelli-VS.cpp" />

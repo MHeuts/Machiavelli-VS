@@ -281,5 +281,8 @@
     <ClCompile Include="thief_state.cpp">
       <Filter>Source Files\Domain\States\character_states</Filter>
     </ClCompile>
+    <ClCompile Include="game_over_state.cpp">
+      <Filter>Source Files\Domain</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

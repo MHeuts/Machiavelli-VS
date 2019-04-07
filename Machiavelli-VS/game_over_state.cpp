@@ -1,6 +1,7 @@
 #include "pch.h"
-#include "Game.h"
 #include "game_over_state.h"
+#include "Game.h"
+#include "Socket.h"
 
 void GameOverState::enter_state()
 {
@@ -9,7 +10,7 @@ void GameOverState::enter_state()
 	showScoreScreen(game->client2);
 }
 
-void GameOverState::showScoreScreen(const std::shared_ptr<ClientInfo> client)
+void GameOverState::showScoreScreen(std::shared_ptr<ClientInfo> client)
 {
 	auto const game = Game::instance();
 	const auto opponent = client == game->client1 ? game->client2 : game->client1;
@@ -17,64 +18,64 @@ void GameOverState::showScoreScreen(const std::shared_ptr<ClientInfo> client)
 	const int buildingScore = calculateBuildingScore(client);
 	const int o_buildingScore = calculateBuildingScore(opponent);
 
-	client->get_socket << "For all your buildings you scored " << buildingScore << "Points!\r\n";
-	client->get_socket << "Your opponent scored " << o_buildingScore << " building Points\r\n";
+	client->get_socket() << "For all your buildings you scored " << buildingScore << "Points!\r\n";
+	client->get_socket() << "Your opponent scored " << o_buildingScore << " building Points\r\n";
 
 	int cityScore = calculateCityScore(client);
 	int o_cityScore = calculateCityScore(opponent);
 
-	if(cityScore == 4)
-		client->get_socket << "You Finished Your City First you get 4 Points!\r\n";
-	else if(cityScore == 2)
-		client->get_socket << "You Finished Your City you get 2 Points!\r\n";
+	if (cityScore == 4)
+		client->get_socket() << "You Finished Your City First you get 4 Points!\r\n";
+	else if (cityScore == 2)
+		client->get_socket() << "You Finished Your City you get 2 Points!\r\n";
 
-	if(o_cityScore == 4)
-		client->get_socket << "Your Opponent Finished His City First het gets 4 Points!\r\n";
+	if (o_cityScore == 4)
+		client->get_socket() << "Your Opponent Finished His City First het gets 4 Points!\r\n";
 	else if (o_cityScore == 2)
-		client->get_socket << "Your Opponent Finished His City het gets 2 Points!\r\n";
+		client->get_socket() << "Your Opponent Finished His City het gets 2 Points!\r\n";
 
 	int colorScore = calculateColorScore(client);
 	int o_colorScore = calculateColorScore(opponent);
 
-	if(colorScore == 3)
-		client->get_socket << "You have all colours in your City, you get 3 Points!\r\n";
+	if (colorScore == 3)
+		client->get_socket() << "You have all colours in your City, you get 3 Points!\r\n";
 
 	if (o_colorScore == 3)
-		client->get_socket << "Your opponent has all colours in his City, he gets 3 Points!\r\n";
+		client->get_socket() << "Your opponent has all colours in his City, he gets 3 Points!\r\n";
 
 	int totalScore = colorScore + cityScore + buildingScore;
 	int o_totalScore = o_colorScore + o_cityScore + o_buildingScore;
 
-	client->get_socket << "Your finished the game with "<< totalScore << " Points!\r\n";
-	client->get_socket << "Your opponent finished the game with "<< totalScore << " Points!\r\n";
+	client->get_socket() << "Your finished the game with " << totalScore << " Points!\r\n";
+	client->get_socket() << "Your opponent finished the game with " << totalScore << " Points!\r\n";
 
 	if (totalScore > o_totalScore)
 	{
-		client->get_socket << "Congratulations You won!" << Socket::endl;
+		client->get_socket() << "Congratulations You won!" << Socket::endl;
 	}
 	else if (totalScore < o_totalScore)
 	{
-		client->get_socket << "You Lost!" << Socket::endl;
+		client->get_socket() << "You Lost!" << Socket::endl;
 	}
 	else
 	{
-		client->get_socket << "It's a tie!" << Socket::endl;
+		client->get_socket() << "It's a tie!" << Socket::endl;
 
 		if (buildingScore > o_buildingScore)
 		{
-			client->get_socket << "You won because you have more building points." << Socket::endl;
+			client->get_socket() << "You won because you have more building points." << Socket::endl;
 		}
 		else if (buildingScore < o_buildingScore)
 		{
-			client->get_socket << "You lost because you have less building points." << Socket::endl;
+			client->get_socket() << "You lost because you have less building points." << Socket::endl;
 		}
 	}
 }
 
-int GameOverState::calculateBuildingScore(const std::shared_ptr<ClientInfo> client)
+int GameOverState::calculateBuildingScore(std::shared_ptr<ClientInfo> client)
 {
-	int score {0};
-	for (auto building = client->get_player().building_cards.begin(); building!= client->get_player().building_cards.end(); ++building)
+	int score{ 0 };
+	for (auto building = client->get_player().building_cards.begin(); building != client->get_player().building_cards.end(); ++building)
 	{
 		if ((*building)->is_built) continue;
 
@@ -84,7 +85,7 @@ int GameOverState::calculateBuildingScore(const std::shared_ptr<ClientInfo> clie
 	return score;
 }
 
-int GameOverState::calculateCityScore(const std::shared_ptr<ClientInfo> client)
+int GameOverState::calculateCityScore(std::shared_ptr<ClientInfo> client)
 {
 	if (Game::instance()->winner == client)
 		return 4;
@@ -93,9 +94,9 @@ int GameOverState::calculateCityScore(const std::shared_ptr<ClientInfo> client)
 	return 0;
 }
 
-int GameOverState::calculateColorScore(const std::shared_ptr<ClientInfo> client)
+int GameOverState::calculateColorScore(std::shared_ptr<ClientInfo> client)
 {
-	bool red{ false }, blue{ false }, yellow{ false }, green{ false }, purple {false};
+	bool red{ false }, blue{ false }, yellow{ false }, green{ false }, purple{ false };
 
 	for (auto building = client->get_player().building_cards.begin(); building != client->get_player().building_cards.end(); ++building)
 	{
