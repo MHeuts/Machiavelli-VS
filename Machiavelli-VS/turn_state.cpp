@@ -155,7 +155,7 @@ void turn_state::update()
 	{
 		if (game->winner != nullptr)
 		{
-			//game->go_to_state<GameOverState>(true);
+			game->go_to_state<GameOverState>(true);
 		}
 		else
 		{
