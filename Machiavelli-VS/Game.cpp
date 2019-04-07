@@ -27,19 +27,19 @@ std::shared_ptr<Game> Game::instance()
 	return instance_;
 }
 
-void Game::AddClient(std::weak_ptr<ClientInfo> client)
+void Game::AddClient(std::shared_ptr<ClientInfo> client)
 {
-	clients.push_back(client);
+	clients_.push_back(client);
 }
 
 void Game::setup()
 {
 	deck_.BuildDeck();
-	clients[0].lock()->get_player().setKing(true);
+	clients_[0]->get_player().setKing(true);
 	running_ = true;
-	for (auto client = clients.begin(); client != clients.end(); ++client)
+	for (auto client = clients_.begin(); client != clients_.end(); ++client)
 	{
-		auto& player = client->lock()->get_player();
+		auto& player = client->get()->get_player();
 		player.setup(std::move(deck_.get_cards(4)));
 	}
 

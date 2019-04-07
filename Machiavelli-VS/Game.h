@@ -2,7 +2,6 @@
 #include "StateMachine.h"
 #include "deck.h"
 
-class Player;
 
 class Game {
 public:
@@ -10,20 +9,20 @@ public:
 	~Game() = default;
 
 private:
-	std::vector<std::weak_ptr<ClientInfo>> clients;
+	std::vector<std::shared_ptr<ClientInfo>> clients_;
 	StateMachine stateMachine;
 	bool running_{false};
 	deck deck_;
 
 	// 0 or 1 for the current player
 	int currentKing_;
-	int currentPlayer_;
+	size_t currentPlayer_ = 0llu;
 
 public:
 	void HandleClientCommand(const ClientCommand& command);
 
 	static std::shared_ptr<Game> instance();
-	void AddClient(std::weak_ptr<ClientInfo> client);
+	void AddClient(std::shared_ptr<ClientInfo> client);
 
 	int getCurrentPlayer() const { return currentPlayer_; }
 	int getKing() const { return currentKing_; }
@@ -32,7 +31,7 @@ public:
 	void setCurrentPlayer(int player) { currentPlayer_ = player; }
 
 	bool isRunning() const { return running_; }
-	bool PlayersReady() const { return clients.size() == 2; }
-	std::shared_ptr<ClientInfo> getCurrentClient() { return clients[currentPlayer_].lock(); };
+	bool PlayersReady() const { return clients_.size() == 2; }
+	std::shared_ptr<ClientInfo> getCurrentClient() { return clients_[currentPlayer_]; };
 	void setup();
 };
