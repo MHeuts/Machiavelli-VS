@@ -35,6 +35,12 @@ void round_start_state::enter_state()
 		game->current_client->set_message("You were the king last round, you may pick a card first.");
 	}
 
+
+	const int index = Random::instance().get(game->character_deck.cards.size() - 1);
+	const auto character = game->character_deck.cards.at(index);
+	game->current_client->set_message(character->name + " is removed");
+	game->character_deck.cards.erase(game->character_deck.cards.begin() + index);
+
 	// Render screens for players
 	game->client1->render_screen();
 	game->client2->render_screen();
@@ -56,9 +62,17 @@ void round_start_state::render(std::shared_ptr<ClientInfo>& client)
 
 	if (client == Game::instance()->current_client)
 	{
-		client->get_socket() << "Please pick a card:" << Socket::endl
-			<< Game::instance()->character_deck.to_string()
-			<< Socket::endl;
+		if (!DiscardState) {
+			client->get_socket() << "Please pick a card:" << Socket::endl
+				<< Game::instance()->character_deck.to_string()
+				<< Socket::endl;
+		}
+		else
+		{
+			client->get_socket() << "Please pick a card to discard:" << Socket::endl
+				<< Game::instance()->character_deck.to_string()
+				<< Socket::endl;
+		}
 	}
 	else
 	{
@@ -70,7 +84,6 @@ void round_start_state::handle_input(std::shared_ptr<ClientCommand>& command)
 {
 	const auto game = Game::instance();
 	const auto client = command->get_client_info().lock();
-
 	if (client != game->current_client) return;
 
 	int card = -1;
@@ -88,23 +101,37 @@ void round_start_state::handle_input(std::shared_ptr<ClientCommand>& command)
 		return;
 	}
 
-	const auto character = game->character_deck.cards.at(card);
-	client->get_player().character_cards.push_back(character);
-	game->character_deck.cards.erase(std::remove(game->character_deck.cards.begin(), game->character_deck.cards.end(), character));
-
-	if (character->name == "King")
+	if(!DiscardState)
 	{
-		game->set_king(client);
-	}
+		const auto character = game->character_deck.cards.at(card);
+		client->get_player().character_cards.push_back(character);
+		game->character_deck.cards.erase(std::remove(game->character_deck.cards.begin(), game->character_deck.cards.end(), character));
 
-	const int index = Random::instance().get(game->character_deck.cards.size() - 1);
-	game->character_deck.cards.erase(game->character_deck.cards.begin() + index);
+		if (character->name == "King")
+		{
+			game->set_king(client);
+		}
+
+	}
+	else
+	{
+		game->character_deck.cards.erase(game->character_deck.cards.begin() + card);
+	}
+	
 
 	switch_state = game->character_deck.cards.empty();
 
 	if (!switch_state)
 	{
-		game->change_player();
+		if(DiscardState)
+		{
+			DiscardState = false;
+		}
+		else
+		{
+			DiscardState = true;
+			game->change_player();
+		}
 	}
 }
 

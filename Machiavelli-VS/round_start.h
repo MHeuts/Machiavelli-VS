@@ -5,6 +5,8 @@
 
 class round_start_state : public State
 {
+private:
+	bool DiscardState{ false };
 public:
 	round_start_state();
 
