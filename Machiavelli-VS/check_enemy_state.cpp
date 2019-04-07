@@ -19,8 +19,8 @@ void check_enemy_state::enter_state()
 void check_enemy_state::render(std::shared_ptr<ClientInfo>& client)
 {
 	client->send_header();
-
 	const auto game = Game::instance();
+
 	if (client == game->current_client)
 	{
 		const auto opponent = client == game->client1 ? game->client2 : game->client1;

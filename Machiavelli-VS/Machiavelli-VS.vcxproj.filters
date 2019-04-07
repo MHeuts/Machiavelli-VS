@@ -273,13 +273,13 @@
       <Filter>Source Files\Domain\States\character_states</Filter>
     </ClCompile>
     <ClCompile Include="mage_swap_state.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Domain\States\character_states</Filter>
     </ClCompile>
     <ClCompile Include="mage_trade_state.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Domain\States\character_states</Filter>
     </ClCompile>
     <ClCompile Include="thief_state.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Domain\States\character_states</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
