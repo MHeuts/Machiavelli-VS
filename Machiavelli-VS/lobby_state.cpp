@@ -1,7 +1,7 @@
 #include "pch.h"
-#include "LobbyState.h"
+#include "lobby_state.h"
 #include "Game.h"
-#include "DrawCharacterState.h"
+#include "draw_character_state.h"
 
 LobbyState::LobbyState() : LobbyState(nullptr)
 {

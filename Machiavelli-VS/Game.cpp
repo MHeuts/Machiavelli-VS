@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Game.h"
 #include <utility>
-#include "LobbyState.h"
+#include "lobby_state.h"
 #include <fstream>
 
 static std::shared_ptr<Game> instance_;

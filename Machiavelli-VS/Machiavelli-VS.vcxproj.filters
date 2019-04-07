@@ -81,14 +81,8 @@
     <ClInclude Include="Building.h">
       <Filter>Header Files\Domain</Filter>
     </ClInclude>
-    <ClInclude Include="Character.h">
-      <Filter>Header Files\Domain</Filter>
-    </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Header Files\Domain</Filter>
-    </ClInclude>
-    <ClInclude Include="TurnState.h">
-      <Filter>Header Files\Domain\States</Filter>
     </ClInclude>
     <ClInclude Include="player_card.h">
       <Filter>Header Files\Domain\cards</Filter>
@@ -120,15 +114,6 @@
     <ClInclude Include="thief.h">
       <Filter>Header Files\Domain\cards</Filter>
     </ClInclude>
-    <ClInclude Include="LobbyState.h">
-      <Filter>Header Files\Domain\States</Filter>
-    </ClInclude>
-    <ClInclude Include="DrawCharacterState.h">
-      <Filter>Header Files\Domain\States</Filter>
-    </ClInclude>
-    <ClInclude Include="GameOverState.h">
-      <Filter>Header Files\Domain\States</Filter>
-    </ClInclude>
     <ClInclude Include="State.h">
       <Filter>Header Files\Domain\States</Filter>
     </ClInclude>
@@ -151,6 +136,21 @@
       <Filter>Header Files\Utilities</Filter>
     </ClInclude>
     <ClInclude Include="round_start.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
+    <ClInclude Include="turn_state.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
+    <ClInclude Include="lobby_state.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
+    <ClInclude Include="draw_character_state.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
+    <ClInclude Include="game_over_state.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
+    <ClInclude Include="check_enemy_state.h">
       <Filter>Header Files\Domain\States</Filter>
     </ClInclude>
   </ItemGroup>
@@ -191,15 +191,6 @@
     <ClCompile Include="preacher.cpp">
       <Filter>Source Files\Domain\cards</Filter>
     </ClCompile>
-    <ClCompile Include="character.cpp">
-      <Filter>Source Files\Domain\cards</Filter>
-    </ClCompile>
-    <ClCompile Include="LobbyState.cpp">
-      <Filter>Source Files\Domain\States</Filter>
-    </ClCompile>
-    <ClCompile Include="DrawCharacterState.cpp">
-      <Filter>Source Files\Domain\States</Filter>
-    </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Source Files\Domain</Filter>
     </ClCompile>
@@ -228,6 +219,18 @@
       <Filter>Source Files\Domain\cards</Filter>
     </ClCompile>
     <ClCompile Include="round_start_state.cpp">
+      <Filter>Source Files\Domain\States</Filter>
+    </ClCompile>
+    <ClCompile Include="turn_state.cpp">
+      <Filter>Source Files\Domain\States</Filter>
+    </ClCompile>
+    <ClCompile Include="lobby_state.cpp">
+      <Filter>Source Files\Domain\States</Filter>
+    </ClCompile>
+    <ClCompile Include="draw_character_state.cpp">
+      <Filter>Source Files\Domain\States</Filter>
+    </ClCompile>
+    <ClCompile Include="check_enemy_state.cpp">
       <Filter>Source Files\Domain\States</Filter>
     </ClCompile>
   </ItemGroup>
