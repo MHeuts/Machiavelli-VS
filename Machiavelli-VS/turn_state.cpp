@@ -3,6 +3,8 @@
 #include "round_start.h"
 #include "game_over_state.h"
 #include "check_enemy_state.h"
+#include "create_building_state.h"
+#include "draw_building_card_state.h"
 
 turn_state::turn_state() : turn_state(nullptr)
 {
@@ -133,13 +135,13 @@ void turn_state::update()
 
 	if (building_building)
 	{
-		//game->go_to_state<BuildBuildingState>();
+		game->go_to_state<create_building_state>();
 		building_building = false;
 	}
 
 	if (pick_building_card)
 	{
-		//game->go_to_state<PickBuildingCardState>();
+		game->go_to_state<draw_building_card_state>();
 		pick_building_card = false;
 	}
 

@@ -153,10 +153,16 @@
   <ItemGroup>
     <ClInclude Include="assassin.h" />
     <ClInclude Include="architect.h" />
+    <ClInclude Include="assassin_state.h" />
     <ClInclude Include="building_deck.h" />
     <ClInclude Include="building_card.h" />
     <ClInclude Include="card.h" />
     <ClInclude Include="check_enemy_state.h" />
+    <ClInclude Include="condottiere_state.h" />
+    <ClInclude Include="create_building_state.h" />
+    <ClInclude Include="draw_building_card_state.h" />
+    <ClInclude Include="mage_swap_state.h" />
+    <ClInclude Include="mage_trade_state.h" />
     <ClInclude Include="round_start.h" />
     <ClInclude Include="player_deck.h" />
     <ClInclude Include="CircularBuffer.h" />
@@ -182,6 +188,7 @@
     <ClInclude Include="State.h" />
     <ClInclude Include="Sync_queue.h" />
     <ClInclude Include="thief.h" />
+    <ClInclude Include="thief_state.h" />
     <ClInclude Include="throw.h" />
     <ClInclude Include="Turn.h" />
     <ClInclude Include="turn_state.h" />
@@ -189,10 +196,14 @@
   <ItemGroup>
     <ClCompile Include="assassin.cpp" />
     <ClCompile Include="architect.cpp" />
+    <ClCompile Include="assassin_state.cpp" />
     <ClCompile Include="BuildingDeck.cpp" />
     <ClCompile Include="CharacterDeck.cpp" />
     <ClCompile Include="check_enemy_state.cpp" />
     <ClCompile Include="condotierre.cpp" />
+    <ClCompile Include="condotierre_state.cpp" />
+    <ClCompile Include="create_building_state.cpp" />
+    <ClCompile Include="draw_building_card_state.cpp" />
     <ClCompile Include="filereader.cpp" />
     <ClCompile Include="draw_character_state.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -200,6 +211,8 @@
     <ClCompile Include="lobby_state.cpp" />
     <ClCompile Include="Machiavelli-VS.cpp" />
     <ClCompile Include="mage.cpp" />
+    <ClCompile Include="mage_swap_state.cpp" />
+    <ClCompile Include="mage_trade_state.cpp" />
     <ClCompile Include="merchant.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -215,6 +228,7 @@
     <ClCompile Include="Socket.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="thief.cpp" />
+    <ClCompile Include="thief_state.cpp" />
     <ClCompile Include="throw.cpp" />
     <ClCompile Include="Turn.cpp" />
     <ClCompile Include="turn_state.cpp" />
