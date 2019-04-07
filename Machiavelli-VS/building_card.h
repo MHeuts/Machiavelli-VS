@@ -1,24 +1,25 @@
 #pragma once
+
 #include <string>
-#include <utility>
+#include "card.h"
 
-class building_card 
+class building_card : public card
 {
-	std::string name_;
-	int cost_;
-	int color_;
-
 public:
-	building_card(); 
-	explicit building_card(std::string const name, int const number, int const color)
-		: name_(std::move(name)), cost_(number), color_(color) {}
+	const std::string name;
+	const int price;
+	const std::string color;
+	const std::string ability;
 
-	void name(std::string name);
-	std::string name() const;
-	void color(int color);
-	int color() const;
-	void cost(int cost);
-	int cost() const;
+	// When built by preacher
+	bool protected_card = false;
+	bool is_built = false;
 
-	std::string to_string() const { return "name: "+ name_ + "color: " + std::to_string(color_) + "cost: " + std::to_string(cost_); }
-}; 
+	building_card(std::string name, int price, std::string color, std::string ability) :
+		name(name), price(price), color(color), ability(ability) {};
+
+	std::string to_string() const override
+	{
+		return name + " (" + color + ", " + std::to_string(price) + ")";
+	};
+};

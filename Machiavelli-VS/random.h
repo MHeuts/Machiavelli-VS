@@ -1,41 +1,22 @@
 #pragma once
 #include <random>
+#include <memory>
 
-class random_generator
+extern std::random_device rd;
+extern std::mt19937 mt;
+
+class Random
 {
-	random_generator() = default;
-	std::random_device rd;
-	std::mt19937 generator{ rd() };
+	Random();
+
+	~Random() = default;
+
+	static std::shared_ptr<Random> instance_;
 
 public:
-	static random_generator& instance()
-	{
-		static random_generator rg;
-		return rg;
-	};
+	static Random& instance();
 
-	int operator()(int min, int max) 
-	{
-		std::uniform_int_distribution<> dis(min, max);
-		return dis(generator);
-	};
+	int get(int max) const;
 
-	size_t operator()(size_t min, size_t max)
-	{
-		std::uniform_int_distribution<size_t> dis(min, max);
-		return dis(generator);
-	};
-
-	float operator()(float min, float max)
-	{
-		std::uniform_real_distribution<float> dis(min, max);
-		return dis(generator);
-	};
-
-	std::mt19937 random_generation() const
-	{
-		return generator;
-	};
+	int get(int min, int max) const;
 };
-
-#define random_generator random_generator::instance()

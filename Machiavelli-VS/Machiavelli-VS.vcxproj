@@ -23,7 +23,7 @@
     <ProjectGuid>{5FA7B62C-C5E3-4961-AA26-B064F9A2A01B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>MachiavelliVS</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -152,61 +152,68 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="assassin.h" />
-    <ClInclude Include="builder.h" />
+    <ClInclude Include="architect.h" />
+    <ClInclude Include="assassin_state.h" />
+    <ClInclude Include="building_deck.h" />
     <ClInclude Include="building_card.h" />
+    <ClInclude Include="card.h" />
+    <ClInclude Include="check_enemy_state.h" />
+    <ClInclude Include="condottiere_state.h" />
+    <ClInclude Include="create_building_state.h" />
+    <ClInclude Include="draw_building_card_state.h" />
+    <ClInclude Include="mage_swap_state.h" />
+    <ClInclude Include="mage_trade_state.h" />
+    <ClInclude Include="round_start.h" />
+    <ClInclude Include="player_deck.h" />
     <ClInclude Include="CircularBuffer.h" />
     <ClInclude Include="ClientCommand.h" />
     <ClInclude Include="ClientInfo.h" />
     <ClInclude Include="color_enum.h" />
     <ClInclude Include="condotierre.h" />
-    <ClInclude Include="deck.h" />
-    <ClInclude Include="DrawCharacterState.h" />
-    <ClInclude Include="file_reader.h" />
-    <ClInclude Include="Ability.h" />
-    <ClInclude Include="ArchitectAbility.h" />
-    <ClInclude Include="AssassinAbility.h" />
-    <ClInclude Include="AssassinationState.h" />
-    <ClInclude Include="BaseState.h" />
-    <ClInclude Include="BishopAbility.h" />
+    <ClInclude Include="filereader.h" />
+    <ClInclude Include="draw_character_state.h" />
     <ClInclude Include="Building.h" />
-    <ClInclude Include="Character.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="king.h" />
     <ClInclude Include="mage.h" />
-    <ClInclude Include="GameOverState.h" />
-    <ClInclude Include="KingAbility.h" />
-    <ClInclude Include="LobbyState.h" />
-    <ClInclude Include="MagicianAbility.h" />
+    <ClInclude Include="game_over_state.h" />
+    <ClInclude Include="lobby_state.h" />
     <ClInclude Include="merchant.h" />
-    <ClInclude Include="MerchantAbility.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="player_card.h" />
     <ClInclude Include="preacher.h" />
     <ClInclude Include="random.h" />
     <ClInclude Include="Socket.h" />
-    <ClInclude Include="StateMachine.h" />
+    <ClInclude Include="State.h" />
     <ClInclude Include="Sync_queue.h" />
     <ClInclude Include="thief.h" />
-    <ClInclude Include="ThiefAbility.h" />
+    <ClInclude Include="thief_state.h" />
     <ClInclude Include="throw.h" />
-    <ClInclude Include="TurnState.h" />
-    <ClInclude Include="WarlordAbility.h" />
+    <ClInclude Include="Turn.h" />
+    <ClInclude Include="turn_state.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="assassin.cpp" />
-    <ClCompile Include="builder.cpp" />
-    <ClCompile Include="character.cpp" />
+    <ClCompile Include="architect.cpp" />
+    <ClCompile Include="assassin_state.cpp" />
+    <ClCompile Include="BuildingDeck.cpp" />
+    <ClCompile Include="CharacterDeck.cpp" />
+    <ClCompile Include="check_enemy_state.cpp" />
     <ClCompile Include="condotierre.cpp" />
-    <ClCompile Include="deck.cpp" />
-    <ClCompile Include="DrawCharacterState.cpp" />
-    <ClCompile Include="file_reader.cpp" />
-    <ClCompile Include="AssassinAbility.cpp" />
+    <ClCompile Include="condotierre_state.cpp" />
+    <ClCompile Include="create_building_state.cpp" />
+    <ClCompile Include="draw_building_card_state.cpp" />
+    <ClCompile Include="filereader.cpp" />
+    <ClCompile Include="draw_character_state.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="game_over_state.cpp" />
     <ClCompile Include="king.cpp" />
-    <ClCompile Include="LobbyState.cpp" />
+    <ClCompile Include="lobby_state.cpp" />
     <ClCompile Include="Machiavelli-VS.cpp" />
     <ClCompile Include="mage.cpp" />
+    <ClCompile Include="mage_swap_state.cpp" />
+    <ClCompile Include="mage_trade_state.cpp" />
     <ClCompile Include="merchant.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -215,11 +222,17 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="player_card.cpp" />
     <ClCompile Include="preacher.cpp" />
-    <ClCompile Include="SatateMachine.cpp" />
+    <ClCompile Include="Random.cpp" />
+    <ClCompile Include="round_start_state.cpp" />
     <ClCompile Include="Socket.cpp" />
+    <ClCompile Include="State.cpp" />
     <ClCompile Include="thief.cpp" />
+    <ClCompile Include="thief_state.cpp" />
     <ClCompile Include="throw.cpp" />
+    <ClCompile Include="Turn.cpp" />
+    <ClCompile Include="turn_state.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,15 +1,14 @@
 #pragma once
-#include "Character.h"
+#include "building_deck.h"
+#include "player_card.h"
 
 
-class preacher : public character
+class preacher : public player_card
 {
 public:
-	preacher(int order) : character(order)
-	{
-		color_ = BLUE;
-		name_ = "preacher";
-		description_ = "stops condotierre from destroying buildings and gets income from blue buildings";
-	}
-	void start_character(Game& game, Player& player) override;
+	preacher();
+
+	void ability() const override;
+
+	void build_building(const std::shared_ptr<building_card>& card) const override;
 };
