@@ -14,6 +14,7 @@
 #include <vector>
 #include "Character.h"
 #include "Building.h"
+#include "building_card.h"
 
 class Player {
 public:
@@ -22,13 +23,25 @@ public:
 
 	std::string get_name() const { return name; }
 	void set_name(const std::string& new_name) { name = new_name; }
+	void setKing(bool king) { isKing_ = king; }
+	bool isKing() const { return isKing_; }
+	void setGold(int gold) { _gold = gold; }
+	int getGold() const { return _gold; }
+
+	void addBuildingCard(building_card building)
+	{
+		_buildingHand.push_back(std::move(building));
+	}
+
+	void setup(std::vector<building_card> cards);
 
 private:
 	std::string name;
 	int _gold;
 	std::vector<character> _characterHand;
-	std::vector<Building> _buildingHand;
-	std::vector<Building> _city;
+	std::vector<building_card> _buildingHand;
+	std::vector<building_card> _city;
+	bool isKing_{ false };
 };
 
 #endif /* Player_hpp */

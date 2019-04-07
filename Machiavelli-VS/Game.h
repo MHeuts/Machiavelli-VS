@@ -1,6 +1,6 @@
 #pragma once
 #include "StateMachine.h"
-#include "player.h"
+#include "deck.h"
 
 class Player;
 
@@ -9,6 +9,7 @@ private:
 	std::vector<std::weak_ptr<ClientInfo>> clients;
 	StateMachine stateMachine;
 	bool running_{false};
+	deck deck_;
 
 public:
 	Game();
