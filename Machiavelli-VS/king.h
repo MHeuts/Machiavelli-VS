@@ -1,15 +1,11 @@
 #pragma once
-#include "Character.h"
+#include "player_card.h"
 
 
-class king : public character
+class King : public CharacterCard
 {
 public:
-	king(int order ) : character(order)
-	{
-		color_ = YELLOW;
-		name_ = "king";
-		description_ = "becomes the leader for next round and gains extra income from yellow buildings";
-	}
-	void start_character(Game& game, Player& player) override;
+	King();
+
+	void ability() const noexcept override;
 };

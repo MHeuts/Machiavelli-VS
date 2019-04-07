@@ -87,6 +87,8 @@ void throw_unless_would_block() {
 
 }
 
+const std::string Socket::endl = "\r\n";
+
 Socket::Socket(SOCKET sock, const struct sockaddr& address) : sock{ sock }
 {
 	switch (address.sa_family) {

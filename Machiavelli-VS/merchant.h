@@ -1,15 +1,12 @@
 #pragma once
-#include "Character.h"
+#include "player_card.h"
 
-
-class mage : public character
+class Merchant : public CharacterCard
 {
 public:
-	mage(int order) : character(order)
-	{
-		color_ = GREEN;
-		name_ = "merchant";
-		description_ = "gets 1 extra income and extra from green buildings";
-	}
-	void start_character(Game& game, Player& player) override;
+	Merchant();
+
+	void ability() const noexcept override;
+
+	int bonus() const noexcept override;
 };

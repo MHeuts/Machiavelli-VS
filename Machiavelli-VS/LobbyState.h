@@ -1,9 +1,15 @@
 #pragma once
-#include "BaseState.h"
-#include "ClientCommand.h"
+#include "State.h"
 
-class LobbyState: public BaseState
+
+class LobbyState : public State
 {
 public:
-	void handle_command(const ClientCommand& command) override;
+	LobbyState() noexcept;
+
+	explicit LobbyState(const std::shared_ptr<State>& old_state) noexcept;
+
+	void render(std::shared_ptr<ClientInfo>& client) noexcept override;
+
+	void update() noexcept override;
 };

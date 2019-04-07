@@ -14,8 +14,6 @@
 #include <memory>
 #include <utility>
 #include <chrono>
-#include "file_reader.h"
-#include "deck.h"
 #include "Game.h"
 using namespace std;
 
@@ -43,19 +41,20 @@ void consume_command() // runs in its own thread
 				auto &client = clientInfo->get_socket();
 				auto &player = clientInfo->get_player();
 				try {
-					Game::instance()->HandleClientCommand(command);
-
+					auto cmd = std::make_shared<ClientCommand>(command);
+					Game::instance()->handle_input(cmd);
+					Game::instance()->render(clientInfo);
 					// TODO handle command here
-					client << player.get_name() << ", you wrote: '" << command.get_cmd() << "', but I'll ignore that for now.\r\n" << machiavelli::prompt;
+					//client << player.name << ", you wrote: '" << command.get_cmd() << "', but I'll ignore that for now.\r\n" << machiavelli::prompt;
 				}
 				catch (const exception& ex) {
-					cerr << "*** exception in consumer thread for player " << player.get_name() << ": " << ex.what() << '\n';
+					cerr << "*** exception in consumer thread for player " << player.name << ": " << ex.what() << '\n';
 					if (client.is_open()) {
 						client.write("Sorry, something went wrong during handling of your request.\r\n");
 					}
 				}
 				catch (...) {
-					cerr << "*** exception in consumer thread for player " << player.get_name() << '\n';
+					cerr << "*** exception in consumer thread for player " << player.name << '\n';
 					if (client.is_open()) {
 						client.write("Sorry, something went wrong during handling of your request.\r\n");
 					}
@@ -69,17 +68,44 @@ void consume_command() // runs in its own thread
 }
 
 std::shared_ptr<ClientInfo> init_client_session(Socket client) {
-	client.write("Welcome to Server 1.0! To quit, type 'quit'.\r\n");
-	client.write("What's your name?\r\n");
-	client.write(machiavelli::prompt);
-	string name;
-	bool done{ false };
-	while (!done) {
-		done = client.readline([&name](std::string input) {
-			name = input;
+
+	if (Game::instance()->is_running())
+	{
+		client << "The game is full!" << Socket::endl;
+		return nullptr;
+	}
+
+	client << "What's your name?" << Socket::endl;
+
+	std::string name;
+	bool done = false;
+
+	while (!done)
+	{
+		done = client.readline([&name](std::string input) { name = input; });
+	}
+
+	client << "How old are you?" << Socket::endl ;
+
+	int age = 0;
+	done = false;
+
+	while (!done || age <= 0)
+	{
+		done = client.readline([&age, &client](std::string input) {
+			try
+			{
+				age = std::stoi(input);
+			}
+			catch (...)
+			{
+				std::cout << "Player provided wrong age input" << std::endl;
+				
+			};
 		});
 	}
-	return make_shared<ClientInfo>(move(client), Player{ name });
+
+	return std::make_shared<ClientInfo>(std::move(client), Player(name, age));
 }
 
 void handle_client(Socket client) // this function runs in a separate thread
@@ -88,20 +114,20 @@ void handle_client(Socket client) // this function runs in a separate thread
 		auto client_info = init_client_session(move(client));
 
 		const auto game = Game::instance();
-		game->AddClient(client_info);
+		game->add_client(client_info);
 
 		auto &socket = client_info->get_socket();
 		auto &player = client_info->get_player();
 
 
-		socket << "Welcome, " << player.get_name() << ", have fun playing our game!\r\n" << machiavelli::prompt;
+		socket << "Welcome, " << player.name << ", have fun playing our game!\r\n" << machiavelli::prompt;
 
 		while (running) { // game loop
 			try {
 				// read first line of request
 				std::string cmd;
 				if (socket.readline([&cmd](std::string input) { cmd = input; })) {
-					cerr << '[' << socket.get_dotted_ip() << " (" << socket.get_socket() << ") " << player.get_name() << "] " << cmd << "\r\n";
+					cerr << '[' << socket.get_dotted_ip() << " (" << socket.get_socket() << ") " << player.name << "] " << cmd << "\r\n";
 
 					if (cmd == "quit") {
 						socket.write("Bye!\r\n");
@@ -133,14 +159,30 @@ void handle_client(Socket client) // this function runs in a separate thread
 	}
 }
 
+void update_states()
+{
+	while (running)
+	{
+		try
+		{
+			Game::instance()->update();
+		}
+		catch (const std::runtime_error& ex)
+		{
+			std::cerr << "Update thread failed" << std::endl << ex.what() << std::endl;
+		}
+
+		std::this_thread::sleep_for(std::chrono::milliseconds(100));
+	}
+}
 int main(int argc, const char * argv[])
 {
 	// start command consumer thread
 	vector<thread> all_threads;
 	all_threads.emplace_back(consume_command);
-
 	// create a server socket
 	ServerSocket server{ machiavelli::tcp_port };
+	all_threads.emplace_back(update_states);
 	try {
 		cerr << "server listening" << '\n';
 

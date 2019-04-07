@@ -1,7 +1,12 @@
 #include "pch.h"
-#include "assassin.h"
+#include "Assassin.h"
+#include "Game.h"
 
-void assassin::print_options(Game& game, Player& player)
+Assassin::Assassin() : CharacterCard("Assassin")
 {
-	
+}
+
+void Assassin::ability_update() const noexcept
+{
+	//Game::instance()->go_to_state<MurderState>();
 }

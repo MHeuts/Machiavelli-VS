@@ -1,14 +1,38 @@
 #include "pch.h"
 #include "LobbyState.h"
 #include "Game.h"
+#include "DrawCharacterState.h"
 
-void LobbyState::handle_command(const ClientCommand& command)
+LobbyState::LobbyState() noexcept : LobbyState(nullptr)
 {
-	auto game = Game::instance();
+}
 
-    if (game->PlayersReady()) {
-        game->setup();
-        return;
-    }
-	command.get_client_info().lock()->get_socket() << "waiting For players";
+LobbyState::LobbyState(const std::shared_ptr<State>& old_state) noexcept : State(old_state)
+{
+}
+
+void LobbyState::render(std::shared_ptr<ClientInfo>& client_info) noexcept
+{
+	std::stringstream message;
+
+	message << "You are currently in the lobby." << Socket::endl;
+
+	if (Game::instance()->number_of_clients() < 2)
+	{
+		message << Socket::endl << "Please wait for the other player to connect." << Socket::endl;
+	}
+
+	client_info->get_socket() << message.str();
+}
+
+void LobbyState::update() noexcept
+{
+	const auto game = Game::instance();
+
+	if (game->client1 == nullptr || game->client2 == nullptr) return;
+
+	if (game->client1->get_player().is_complete() && game->client2->get_player().is_complete())
+	{
+		game->go_to_state<DrawCharacterState>(true);
+	}
 }

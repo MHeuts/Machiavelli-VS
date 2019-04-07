@@ -72,13 +72,7 @@
     <ClInclude Include="Sync_queue.h">
       <Filter>Header Files\Network</Filter>
     </ClInclude>
-    <ClInclude Include="file_reader.h">
-      <Filter>Header Files\Domain</Filter>
-    </ClInclude>
     <ClInclude Include="player.h">
-      <Filter>Header Files\Domain</Filter>
-    </ClInclude>
-    <ClInclude Include="deck.h">
       <Filter>Header Files\Domain</Filter>
     </ClInclude>
     <ClInclude Include="random.h">
@@ -120,13 +114,7 @@
     <ClInclude Include="WarlordAbility.h">
       <Filter>Header Files\Domain\Abilities</Filter>
     </ClInclude>
-    <ClInclude Include="BaseState.h">
-      <Filter>Header Files\Domain\States</Filter>
-    </ClInclude>
     <ClInclude Include="AssassinationState.h">
-      <Filter>Header Files\Domain\States</Filter>
-    </ClInclude>
-    <ClInclude Include="StateMachine.h">
       <Filter>Header Files\Domain\States</Filter>
     </ClInclude>
     <ClInclude Include="TurnState.h">
@@ -174,6 +162,24 @@
     <ClInclude Include="GameOverState.h">
       <Filter>Header Files\Domain\States</Filter>
     </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildingDeck.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="csvreader.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="card.h">
+      <Filter>Header Files\Domain\cards</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterDeck.h">
+      <Filter>Header Files\Domain\cards</Filter>
+    </ClInclude>
+    <ClInclude Include="Turn.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -191,17 +197,8 @@
     <ClCompile Include="Socket.cpp">
       <Filter>Source Files\Network</Filter>
     </ClCompile>
-    <ClCompile Include="deck.cpp">
-      <Filter>Source Files\Domain</Filter>
-    </ClCompile>
-    <ClCompile Include="file_reader.cpp">
-      <Filter>Source Files\Domain</Filter>
-    </ClCompile>
     <ClCompile Include="AssassinAbility.cpp">
       <Filter>Source Files\Domain\Abilities</Filter>
-    </ClCompile>
-    <ClCompile Include="SatateMachine.cpp">
-      <Filter>Source Files\Domain\States</Filter>
     </ClCompile>
     <ClCompile Include="thief.cpp">
       <Filter>Source Files\Domain\cards</Filter>
@@ -238,6 +235,27 @@
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Source Files\Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="csvreader.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="State.cpp">
+      <Filter>Source Files\Domain\States</Filter>
+    </ClCompile>
+    <ClCompile Include="player_card.cpp">
+      <Filter>Source Files\Domain\cards</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildingDeck.cpp">
+      <Filter>Source Files\Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterDeck.cpp">
+      <Filter>Source Files\Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="Turn.cpp">
+      <Filter>Source Files\Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="Random.cpp">
+      <Filter>Source Files\Utilities</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

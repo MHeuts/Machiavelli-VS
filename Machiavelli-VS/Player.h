@@ -10,38 +10,46 @@
 #ifndef Player_h
 #define Player_h
 
+class CharacterCard;
+class BuildingCard;
+
 #include <string>
-#include <vector>
-#include "Character.h"
-#include "Building.h"
+#include "Socket.h"
 #include "building_card.h"
+#include "player_card.h"
+#include "Turn.h"
+class Player
+{
+	Turn current_turn;
 
-class Player {
 public:
-	Player() {}
-	Player(const std::string& name) : name{ name } {}
+	const std::string name;
+	const int age = -1;
 
-	std::string get_name() const { return name; }
-	void set_name(const std::string& new_name) { name = new_name; }
-	void setKing(bool king) { isKing_ = king; }
-	bool isKing() const { return isKing_; }
-	void setGold(int gold) { _gold = gold; }
-	int getGold() const { return _gold; }
+	int gold = 0;
+	bool is_king = false;
 
-	void addBuildingCard(building_card building)
-	{
-		_buildingHand.push_back(std::move(building));
-	}
+	std::vector<std::shared_ptr<CharacterCard>> character_cards;
+	std::vector<std::shared_ptr<BuildingCard>> building_cards;
 
-	void setup(std::vector<building_card> cards);
+	Player() = default;
 
-private:
-	std::string name;
-	int _gold;
-	std::vector<character> _characterHand;
-	std::vector<building_card> _buildingHand;
-	std::vector<building_card> _city;
-	bool isKing_{ false };
+	explicit Player(const std::string& name) noexcept;
+
+	explicit Player(const std::string& name, const int age) noexcept;
+
+	bool is_complete() const noexcept;
+
+	Turn& get_turn() noexcept;
+
+	void start_turn() noexcept;
+
+	std::shared_ptr<CharacterCard> has_card(const std::shared_ptr<CharacterCard>& card) const noexcept;
+
+	std::string building_cards_view() const noexcept;
+
+	std::string cards_view() const noexcept;
+
+	int number_built_buildings() const noexcept;
 };
-
 #endif /* Player_hpp */

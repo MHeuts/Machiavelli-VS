@@ -45,6 +45,8 @@ protected:
 	struct sockaddr_storage addr;
 	mutable CircularBuffer<char> buffer;
 public:
+	static const std::string endl;
+
 	Socket() : sock(0), buffer{ 512 } {}
 	Socket(SOCKET sock, const struct sockaddr& address);
 	Socket(const Socket& other) = delete;
