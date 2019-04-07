@@ -20,15 +20,7 @@ protected:
 
 	bool performed_normal_choice_ = false;
 	virtual void default_options(Game& game, Player& player);
-
-	bool choosing_building_card_ = false;
-	std::vector<Building> building_cards_{};
-	virtual void choose_building_options(Game& game, Player& player);
-
-	int amount_of_buildings_ = 0;
-	int max_buildings_to_build_ = 1;
-	bool choosing_building_to_build(Game& game, Player& player);
-
+	
 	bool character_power_ = false;
 	virtual void character_options(Game& game, Player& player) {};
 
