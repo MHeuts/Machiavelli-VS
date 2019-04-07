@@ -9,3 +9,10 @@
 #include "pch.h"
 #include "player.h"
 using namespace std;
+
+void Player::setup(std::vector<building_card> cards)
+{
+	_gold = 2;
+	_city.clear();
+	_buildingHand = std::move(cards);
+}
