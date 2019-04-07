@@ -23,7 +23,7 @@
     <ProjectGuid>{5FA7B62C-C5E3-4961-AA26-B064F9A2A01B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>MachiavelliVS</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -207,6 +207,7 @@
     <ClCompile Include="filereader.cpp" />
     <ClCompile Include="draw_character_state.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="game_over_state.cpp" />
     <ClCompile Include="king.cpp" />
     <ClCompile Include="lobby_state.cpp" />
     <ClCompile Include="Machiavelli-VS.cpp" />
