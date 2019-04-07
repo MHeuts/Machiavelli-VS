@@ -21,12 +21,8 @@ void round_start_state::enter_state()
 
 	game->client1->get_player().character_cards.clear();
 	game->client2->get_player().character_cards.clear();
-
-	// Shuffle deck
-	std::random_device rd;
-	std::mt19937 g(rd());
-
-	std::shuffle(game->character_deck.cards.begin(), game->character_deck.cards.end(), g);
+	
+	std::random_shuffle(game->character_deck.cards.begin(), game->character_deck.cards.end());
 
 	// Assign king
 	game->current_client = game->client1->get_player().is_king ? game->client1 : game->client2;
