@@ -13,7 +13,11 @@ void GameOverState::enter_state()
 void GameOverState::showScoreScreen(std::shared_ptr<ClientInfo> client)
 {
 	auto const game = Game::instance();
-	const auto opponent = client == game->client1 ? game->client2 : game->client1;
+
+	if(client == game->client1)
+
+
+	const auto opponent = game->client1 ? game->client2 : game->client1;
 
 	const int buildingScore = calculateBuildingScore(client);
 	const int o_buildingScore = calculateBuildingScore(opponent);
@@ -47,7 +51,7 @@ void GameOverState::showScoreScreen(std::shared_ptr<ClientInfo> client)
 	int o_totalScore = o_colorScore + o_cityScore + o_buildingScore;
 
 	client->get_socket() << "Your finished the game with " << totalScore << " Points!\r\n";
-	client->get_socket() << "Your opponent finished the game with " << totalScore << " Points!\r\n";
+	client->get_socket() << "Your opponent finished the game with " << o_totalScore << " Points!\r\n";
 
 	if (totalScore > o_totalScore)
 	{
@@ -77,7 +81,7 @@ int GameOverState::calculateBuildingScore(std::shared_ptr<ClientInfo> client)
 	int score{ 0 };
 	for (auto building = client->get_player().building_cards.begin(); building != client->get_player().building_cards.end(); ++building)
 	{
-		if ((*building)->is_built) continue;
+		if (!(*building)->is_built) continue;
 
 		score += (*building)->price;
 	}
