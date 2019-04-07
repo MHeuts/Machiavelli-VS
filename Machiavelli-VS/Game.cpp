@@ -11,8 +11,12 @@ Game::Game()
 
 void Game::HandleClientCommand(const ClientCommand& command)
 {
-
-	stateMachine.handle_command(command);
+	if (&command.get_client_info().lock()->get_player() != &getCurrentClient()->get_player()) {
+		command.get_client_info().lock()->get_socket() << "Not your turn\n";
+	}
+	else {
+		stateMachine.handle_command(command);
+	}
 }
 
 static std::shared_ptr<Game> instance_;
@@ -30,17 +34,16 @@ void Game::AddClient(std::weak_ptr<ClientInfo> client)
 
 void Game::setup()
 {
-
 	deck_.BuildDeck();
 	clients[0].lock()->get_player().setKing(true);
 	running_ = true;
 	for (auto client = clients.begin(); client != clients.end(); ++client)
 	{
 		auto& player = client->lock()->get_player();
-
 		player.setup(std::move(deck_.get_cards(4)));
-		
 	}
+
+	currentKing = 0;
 	stateMachine.pop_state();
 	stateMachine.push_state<DrawCharacterState>();
 }
