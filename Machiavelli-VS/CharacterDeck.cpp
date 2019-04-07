@@ -10,7 +10,7 @@
 #include "condotierre.h"
 #include "Socket.h"
 
-void player_deck::make_card(const std::string& name, const int order) noexcept
+void player_deck::make_card(const std::string& name, const int order)
 {
 	std::shared_ptr<player_card> card = nullptr;
 
@@ -51,7 +51,7 @@ void player_deck::make_card(const std::string& name, const int order) noexcept
 	original_cards.push_back(card);
 }
 
-void player_deck::reset() noexcept
+void player_deck::reset()
 {
 	// Reset properties
 	for (const auto& card : original_cards)
@@ -63,7 +63,7 @@ void player_deck::reset() noexcept
 	cards = original_cards;
 }
 
-std::ifstream& operator>>(std::ifstream& ifstream, player_deck& deck) noexcept
+std::ifstream& operator>>(std::ifstream& ifstream, player_deck& deck)
 {
 	try
 	{
@@ -84,7 +84,7 @@ std::ifstream& operator>>(std::ifstream& ifstream, player_deck& deck) noexcept
 	return ifstream;
 }
 
-std::ostream& operator<<(std::ostream& ostream, player_deck& deck) noexcept
+std::ostream& operator<<(std::ostream& ostream, player_deck& deck)
 {
 	for (const auto& card : deck.cards)
 	{
@@ -94,7 +94,7 @@ std::ostream& operator<<(std::ostream& ostream, player_deck& deck) noexcept
 	return ostream;
 }
 
-std::string player_deck::to_string() const noexcept
+std::string player_deck::to_string() const
 {
 	std::stringstream output;
 
@@ -109,7 +109,7 @@ std::string player_deck::to_string() const noexcept
 	return output.str();
 }
 
-std::string player_deck::print_original_cards() const noexcept
+std::string player_deck::print_original_cards() const
 {
 	std::stringstream output;
 
@@ -122,7 +122,7 @@ std::string player_deck::print_original_cards() const noexcept
 	return output.str();
 }
 
-std::vector<std::shared_ptr<player_card>> player_deck::get_original_cards() const noexcept
+std::vector<std::shared_ptr<player_card>> player_deck::get_original_cards() const
 {
 	return original_cards;
 }

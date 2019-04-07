@@ -7,7 +7,7 @@ class architect : public player_card
 public:
 	architect();
 
-	void ability() const noexcept override;
+	void ability() const override;
 
-	bool can_build_buildings(int number_built) const noexcept override;
+	bool can_build_buildings(int number_built) const override;
 };

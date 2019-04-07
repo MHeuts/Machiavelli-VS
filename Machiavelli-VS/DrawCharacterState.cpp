@@ -4,15 +4,15 @@
 #include "DrawCharacterState.h"
 
 
-DrawCharacterState::DrawCharacterState() noexcept : DrawCharacterState(nullptr)
+DrawCharacterState::DrawCharacterState() : DrawCharacterState(nullptr)
 {
 }
 
-DrawCharacterState::DrawCharacterState(const std::shared_ptr<State>& old_state) noexcept : State(old_state)
+DrawCharacterState::DrawCharacterState(const std::shared_ptr<State>& old_state) : State(old_state)
 {
 }
 
-void DrawCharacterState::enter_state() noexcept
+void DrawCharacterState::enter_state()
 {
 	switch_state = false;
 
@@ -61,10 +61,11 @@ void DrawCharacterState::enter_state() noexcept
 	switch_state = true;
 }
 
-void DrawCharacterState::update() noexcept
+void DrawCharacterState::update()
 {
 	if (switch_state)
 	{
+		//TODO:
 		//Game::instance()->go_to_state<RoundInitState>(true);
 	}
 }

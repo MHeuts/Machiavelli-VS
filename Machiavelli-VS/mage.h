@@ -8,5 +8,5 @@ class mage : public player_card
 public:
 	mage();
 
-	void ability_update() const noexcept override;
+	void ability_update() const override;
 };

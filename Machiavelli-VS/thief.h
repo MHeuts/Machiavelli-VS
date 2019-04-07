@@ -7,5 +7,5 @@ class thief : public player_card
 public:
 	thief();
 
-	void ability_update() const noexcept override;
+	void ability_update() const override;
 };

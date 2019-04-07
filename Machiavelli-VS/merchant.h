@@ -6,7 +6,7 @@ class merchant : public player_card
 public:
 	merchant();
 
-	void ability() const noexcept override;
+	void ability() const override;
 
-	int bonus() const noexcept override;
+	int bonus() const override;
 };

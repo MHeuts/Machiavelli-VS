@@ -12,9 +12,9 @@ class building_deck : public file_reader
 public:
 	std::vector<std::shared_ptr<building_card>> cards;
 
-	void reset() noexcept;
+	void reset();
 
-	friend std::ifstream& operator>>(std::ifstream& ifstream, building_deck& deck) noexcept;
+	friend std::ifstream& operator>>(std::ifstream& ifstream, building_deck& deck);
 
-	friend std::ostream& operator<<(std::ostream& ostream, const building_deck& deck) noexcept;
+	friend std::ostream& operator<<(std::ostream& ostream, const building_deck& deck);
 };

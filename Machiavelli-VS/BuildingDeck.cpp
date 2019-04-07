@@ -3,7 +3,7 @@
 #include "building_deck.h"
 
 
-void building_deck::reset() noexcept
+void building_deck::reset()
 {
 	cards.clear();
 
@@ -15,7 +15,7 @@ void building_deck::reset() noexcept
 	}
 }
 
-std::ifstream& operator>>(std::ifstream& ifstream, building_deck& deck) noexcept
+std::ifstream& operator>>(std::ifstream& ifstream, building_deck& deck)
 {
 	try
 	{
@@ -43,7 +43,7 @@ std::ifstream& operator>>(std::ifstream& ifstream, building_deck& deck) noexcept
 	return ifstream;
 }
 
-std::ostream& operator<<(std::ostream& ostream, const building_deck& deck) noexcept
+std::ostream& operator<<(std::ostream& ostream, const building_deck& deck)
 {
 	for (const auto& card : deck.cards)
 	{

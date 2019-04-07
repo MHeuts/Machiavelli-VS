@@ -7,6 +7,7 @@ class condotierre : public player_card
 public:
 	condotierre();
 
-	void ability_update() const noexcept override;
+
+	void ability_update() const override;
 };
 

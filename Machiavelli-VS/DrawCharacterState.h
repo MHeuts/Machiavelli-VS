@@ -4,12 +4,12 @@
 class DrawCharacterState : public State
 {
 public:
-	DrawCharacterState() noexcept;
+	DrawCharacterState();
 
-	explicit DrawCharacterState(const std::shared_ptr<State>& old_state) noexcept;
+	explicit DrawCharacterState(const std::shared_ptr<State>& old_state);
 
-	void enter_state() noexcept override;
+	void enter_state() override;
 
-	void update() noexcept override;
+	void update() override;
 };
 

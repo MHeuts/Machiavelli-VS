@@ -187,7 +187,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="assassin.cpp" />
-    <ClCompile Include="builder.cpp" />
+    <ClCompile Include="architect.cpp" />
     <ClCompile Include="BuildingDeck.cpp" />
     <ClCompile Include="character.cpp" />
     <ClCompile Include="CharacterDeck.cpp" />

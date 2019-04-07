@@ -5,11 +5,11 @@
 class LobbyState : public State
 {
 public:
-	LobbyState() noexcept;
+	LobbyState();
 
-	explicit LobbyState(const std::shared_ptr<State>& old_state) noexcept;
+	explicit LobbyState(const std::shared_ptr<State>& old_state);
 
-	void render(std::shared_ptr<ClientInfo>& client) noexcept override;
+	void render(std::shared_ptr<ClientInfo>& client) override;
 
-	void update() noexcept override;
+	void update() override;
 };

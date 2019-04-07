@@ -7,5 +7,5 @@ class king : public player_card
 public:
 	king();
 
-	void ability() const noexcept override;
+	void ability() const override;
 };

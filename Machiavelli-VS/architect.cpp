@@ -8,14 +8,14 @@ architect::architect() : player_card("Architect")
 	pickable_buildings = 2;
 }
 
-void architect::ability() const noexcept
+void architect::ability() const
 {
 	Game::instance()->current_client->set_message(
 		"Info: The Architect will allow you to pick and build multiple buildings."
 	);
 }
 
-bool architect::can_build_buildings(const int number_built) const noexcept
+bool architect::can_build_buildings(const int number_built) const
 {
 	return true;
 }

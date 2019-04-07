@@ -5,7 +5,7 @@ mage::mage() : player_card("Mage")
 {
 }
 
-void mage::ability_update() const noexcept
+void mage::ability_update() const
 {
 	//Game::instance()->go_to_state<BuildingCardSwapState>();
 }

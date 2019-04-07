@@ -3,15 +3,15 @@
 #include "Game.h"
 #include "DrawCharacterState.h"
 
-LobbyState::LobbyState() noexcept : LobbyState(nullptr)
+LobbyState::LobbyState() : LobbyState(nullptr)
 {
 }
 
-LobbyState::LobbyState(const std::shared_ptr<State>& old_state) noexcept : State(old_state)
+LobbyState::LobbyState(const std::shared_ptr<State>& old_state) : State(old_state)
 {
 }
 
-void LobbyState::render(std::shared_ptr<ClientInfo>& client_info) noexcept
+void LobbyState::render(std::shared_ptr<ClientInfo>& client_info)
 {
 	std::stringstream message;
 
@@ -25,7 +25,7 @@ void LobbyState::render(std::shared_ptr<ClientInfo>& client_info) noexcept
 	client_info->get_socket() << message.str();
 }
 
-void LobbyState::update() noexcept
+void LobbyState::update()
 {
 	const auto game = Game::instance();
 

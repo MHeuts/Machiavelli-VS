@@ -11,17 +11,17 @@ player_card::player_card(const std::string name, const std::string color) : name
 {
 }
 
-bool player_card::operator==(const player_card right) const noexcept
+bool player_card::operator==(const player_card right) const
 {
 	return order == right.order;
 }
 
-void player_card::build_building(const std::shared_ptr<building_card>& card) const noexcept
+void player_card::build_building(const std::shared_ptr<building_card>& card) const
 {
 	card->is_built = true;
 }
 
-int player_card::bonus() const noexcept
+int player_card::bonus() const
 {
 	if (color == "grey") return 0;
 
@@ -37,7 +37,7 @@ int player_card::bonus() const noexcept
 	return bonus;
 }
 
-bool player_card::can_build_buildings(const int number_built) const noexcept
+bool player_card::can_build_buildings(const int number_built) const
 {
 	return number_built < 8;
 }

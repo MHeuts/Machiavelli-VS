@@ -6,5 +6,5 @@ class assassin : public player_card
 public:
 	assassin();
 
-	void ability_update() const noexcept override;
+	void ability_update() const override;
 };

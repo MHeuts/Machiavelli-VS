@@ -23,15 +23,15 @@ public:
 	const std::string color;
 	int order;
 
-	virtual void ability() const noexcept {}
+	virtual void ability() const {}
 
-	virtual void ability_update() const noexcept {}
+	virtual void ability_update() const {}
 
-	bool operator==(player_card right) const noexcept;
+	bool operator==(player_card right) const;
 
-	virtual int bonus() const noexcept;
+	virtual int bonus() const;
 
-	virtual void build_building(const std::shared_ptr<building_card>& card) const noexcept;
+	virtual void build_building(const std::shared_ptr<building_card>& card) const;
 
-	virtual bool can_build_buildings(int number_built) const noexcept;
+	virtual bool can_build_buildings(int number_built) const;
 };

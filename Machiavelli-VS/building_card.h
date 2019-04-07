@@ -18,7 +18,7 @@ public:
 	building_card(std::string name, int price, std::string color, std::string ability) :
 		name(name), price(price), color(color), ability(ability) {};
 
-	std::string to_string() const noexcept override
+	std::string to_string() const override
 	{
 		return name + " (" + color + ", " + std::to_string(price) + ")";
 	};

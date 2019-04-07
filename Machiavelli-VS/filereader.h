@@ -1,6 +1,4 @@
 #pragma once
-
-#include <fstream>
 #include <vector>
 
 class file_reader
@@ -11,5 +9,3 @@ protected:
 public:
 	std::vector<std::vector<std::string>> process_csv(std::ifstream& ifstream) const;
 };
-
-

@@ -7,5 +7,5 @@ public:
 	virtual ~card() = default;
 
 private:
-	virtual std::string to_string() const noexcept { return "<base card>"; };
+	virtual std::string to_string() const { return "<base card>"; };
 };

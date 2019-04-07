@@ -2,6 +2,7 @@
 #include "Game.h"
 #include <utility>
 #include "LobbyState.h"
+#include <fstream>
 
 static std::shared_ptr<Game> instance_;
 
