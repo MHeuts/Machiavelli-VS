@@ -6,7 +6,9 @@
 //  Revised by Jeroen de Haas on 22/11/2016
 //  Copyright (c) 2014 Avans Hogeschool, 's-Hertogenbosch. All rights reserved.
 //
-
+#define _CRTDBG_MAP_ALLOC
+#include <stdlib.h>
+#include <crtdbg.h>
 #include "pch.h"
 #include <thread>
 #include <iostream>
@@ -149,7 +151,7 @@ void handle_client(Socket client) // this function runs in a separate thread
 				socket.write("ERROR: something went wrong during handling of your request. Sorry!\r\n");
 			}
 		}
-		// close weg
+		game->remove_client(client_info);
 	}
 	catch (std::exception &ex) {
 		cerr << "handle_client " << ex.what() << "\n";
@@ -209,6 +211,7 @@ int main(int argc, const char * argv[])
 		t.join();
 	}
 
+	_CrtDumpMemoryLeaks();
 	return 0;
 }
 

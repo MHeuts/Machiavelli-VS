@@ -2,6 +2,7 @@
 #include <random>
 #include "round_start.h"
 #include "Random.h"
+#include "turn_state.h"
 
 round_start_state::round_start_state() : round_start_state(nullptr)
 {
@@ -140,6 +141,6 @@ void round_start_state::update()
 	if (switch_state)
 	{
 		//TODO:
-		//Game::instance()->go_to_state<NEXT>(true);
+		Game::instance()->go_to_state<turn_state>(true);
 	}
 }

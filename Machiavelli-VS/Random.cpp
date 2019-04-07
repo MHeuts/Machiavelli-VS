@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "Random.h"
+#include "random.h"
 
 std::random_device rd_;
 std::mt19937 mt_;

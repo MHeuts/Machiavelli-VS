@@ -49,6 +49,12 @@
     <Filter Include="Source Files\Domain\decks">
       <UniqueIdentifier>{e5958c5c-f9f0-4065-ae2c-300b91b34454}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Domain\States\character_states">
+      <UniqueIdentifier>{b59faff4-37b7-4a4d-8351-02e2348e8754}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Domain\States\character_states">
+      <UniqueIdentifier>{5178c758-07d8-4c69-80d7-6d4e999c497e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -81,14 +87,8 @@
     <ClInclude Include="Building.h">
       <Filter>Header Files\Domain</Filter>
     </ClInclude>
-    <ClInclude Include="Character.h">
-      <Filter>Header Files\Domain</Filter>
-    </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Header Files\Domain</Filter>
-    </ClInclude>
-    <ClInclude Include="TurnState.h">
-      <Filter>Header Files\Domain\States</Filter>
     </ClInclude>
     <ClInclude Include="player_card.h">
       <Filter>Header Files\Domain\cards</Filter>
@@ -120,15 +120,6 @@
     <ClInclude Include="thief.h">
       <Filter>Header Files\Domain\cards</Filter>
     </ClInclude>
-    <ClInclude Include="LobbyState.h">
-      <Filter>Header Files\Domain\States</Filter>
-    </ClInclude>
-    <ClInclude Include="DrawCharacterState.h">
-      <Filter>Header Files\Domain\States</Filter>
-    </ClInclude>
-    <ClInclude Include="GameOverState.h">
-      <Filter>Header Files\Domain\States</Filter>
-    </ClInclude>
     <ClInclude Include="State.h">
       <Filter>Header Files\Domain\States</Filter>
     </ClInclude>
@@ -152,6 +143,42 @@
     </ClInclude>
     <ClInclude Include="round_start.h">
       <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
+    <ClInclude Include="turn_state.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
+    <ClInclude Include="lobby_state.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
+    <ClInclude Include="draw_character_state.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
+    <ClInclude Include="game_over_state.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
+    <ClInclude Include="check_enemy_state.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
+    <ClInclude Include="create_building_state.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
+    <ClInclude Include="draw_building_card_state.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
+    <ClInclude Include="assassin_state.h">
+      <Filter>Header Files\Domain\States\character_states</Filter>
+    </ClInclude>
+    <ClInclude Include="thief_state.h">
+      <Filter>Header Files\Domain\States\character_states</Filter>
+    </ClInclude>
+    <ClInclude Include="condottiere_state.h">
+      <Filter>Header Files\Domain\States\character_states</Filter>
+    </ClInclude>
+    <ClInclude Include="mage_swap_state.h">
+      <Filter>Header Files\Domain\States\character_states</Filter>
+    </ClInclude>
+    <ClInclude Include="mage_trade_state.h">
+      <Filter>Header Files\Domain\States\character_states</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -191,15 +218,6 @@
     <ClCompile Include="preacher.cpp">
       <Filter>Source Files\Domain\cards</Filter>
     </ClCompile>
-    <ClCompile Include="character.cpp">
-      <Filter>Source Files\Domain\cards</Filter>
-    </ClCompile>
-    <ClCompile Include="LobbyState.cpp">
-      <Filter>Source Files\Domain\States</Filter>
-    </ClCompile>
-    <ClCompile Include="DrawCharacterState.cpp">
-      <Filter>Source Files\Domain\States</Filter>
-    </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>Source Files\Domain</Filter>
     </ClCompile>
@@ -229,6 +247,39 @@
     </ClCompile>
     <ClCompile Include="round_start_state.cpp">
       <Filter>Source Files\Domain\States</Filter>
+    </ClCompile>
+    <ClCompile Include="turn_state.cpp">
+      <Filter>Source Files\Domain\States</Filter>
+    </ClCompile>
+    <ClCompile Include="lobby_state.cpp">
+      <Filter>Source Files\Domain\States</Filter>
+    </ClCompile>
+    <ClCompile Include="draw_character_state.cpp">
+      <Filter>Source Files\Domain\States</Filter>
+    </ClCompile>
+    <ClCompile Include="check_enemy_state.cpp">
+      <Filter>Source Files\Domain\States</Filter>
+    </ClCompile>
+    <ClCompile Include="create_building_state.cpp">
+      <Filter>Source Files\Domain\States</Filter>
+    </ClCompile>
+    <ClCompile Include="draw_building_card_state.cpp">
+      <Filter>Source Files\Domain\States</Filter>
+    </ClCompile>
+    <ClCompile Include="assassin_state.cpp">
+      <Filter>Source Files\Domain\States\character_states</Filter>
+    </ClCompile>
+    <ClCompile Include="condotierre_state.cpp">
+      <Filter>Source Files\Domain\States\character_states</Filter>
+    </ClCompile>
+    <ClCompile Include="mage_swap_state.cpp">
+      <Filter>Source Files\Domain\States\character_states</Filter>
+    </ClCompile>
+    <ClCompile Include="mage_trade_state.cpp">
+      <Filter>Source Files\Domain\States\character_states</Filter>
+    </ClCompile>
+    <ClCompile Include="thief_state.cpp">
+      <Filter>Source Files\Domain\States\character_states</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
