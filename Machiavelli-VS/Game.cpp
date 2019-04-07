@@ -43,7 +43,7 @@ void Game::setup()
 		player.setup(std::move(deck_.get_cards(4)));
 	}
 
-	currentKing = 0;
+	currentKing_ = 0;
 	stateMachine.pop_state();
 	stateMachine.push_state<DrawCharacterState>();
 }

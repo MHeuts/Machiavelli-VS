@@ -88,7 +88,7 @@ void handle_client(Socket client) // this function runs in a separate thread
 		auto client_info = init_client_session(move(client));
 
 		const auto game = Game::instance();
-		//game->AddClient(client_info);
+		game->AddClient(client_info);
 
 		auto &socket = client_info->get_socket();
 		auto &player = client_info->get_player();
