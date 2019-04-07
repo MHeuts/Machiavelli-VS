@@ -23,7 +23,7 @@
     <ProjectGuid>{5FA7B62C-C5E3-4961-AA26-B064F9A2A01B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>MachiavelliVS</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -160,6 +160,7 @@
     <ClInclude Include="color_enum.h" />
     <ClInclude Include="condotierre.h" />
     <ClInclude Include="deck.h" />
+    <ClInclude Include="DrawCharacterState.h" />
     <ClInclude Include="file_reader.h" />
     <ClInclude Include="Ability.h" />
     <ClInclude Include="ArchitectAbility.h" />
@@ -171,8 +172,10 @@
     <ClInclude Include="Character.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="king.h" />
-    <ClInclude Include="KingAbility.h" />
     <ClInclude Include="mage.h" />
+    <ClInclude Include="GameOverState.h" />
+    <ClInclude Include="KingAbility.h" />
+    <ClInclude Include="LobbyState.h" />
     <ClInclude Include="MagicianAbility.h" />
     <ClInclude Include="merchant.h" />
     <ClInclude Include="MerchantAbility.h" />
@@ -196,10 +199,12 @@
     <ClCompile Include="character.cpp" />
     <ClCompile Include="condotierre.cpp" />
     <ClCompile Include="deck.cpp" />
+    <ClCompile Include="DrawCharacterState.cpp" />
     <ClCompile Include="file_reader.cpp" />
     <ClCompile Include="AssassinAbility.cpp" />
-    <ClCompile Include="game.cpp" />
     <ClCompile Include="king.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="LobbyState.cpp" />
     <ClCompile Include="Machiavelli-VS.cpp" />
     <ClCompile Include="mage.cpp" />
     <ClCompile Include="merchant.cpp" />

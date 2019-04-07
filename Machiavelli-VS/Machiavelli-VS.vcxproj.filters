@@ -165,6 +165,15 @@
     <ClInclude Include="thief.h">
       <Filter>Header Files\Domain\cards</Filter>
     </ClInclude>
+    <ClInclude Include="LobbyState.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawCharacterState.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOverState.h">
+      <Filter>Header Files\Domain\States</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -221,8 +230,14 @@
     <ClCompile Include="character.cpp">
       <Filter>Source Files\Domain\cards</Filter>
     </ClCompile>
-    <ClCompile Include="game.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files\Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="LobbyState.cpp">
+      <Filter>Source Files\Domain\States</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawCharacterState.cpp">
+      <Filter>Source Files\Domain\States</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
