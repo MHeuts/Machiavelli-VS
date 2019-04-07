@@ -1,14 +1,16 @@
 #pragma once
 #include <string>
 #include <utility>
+#include "color_enum.h"
+#include "Character.h"
 
-class player_card
+class player_card 
 {
-private:
 	std::string name_;
 	int number_;
+	color color_;
 public:
 	player_card();
-	player_card(int const number, std::string name )
-		: name_(std::move(name)), number_(number) {};
+	player_card(int const number, std::string name)
+		: name_(std::move(name)), number_(number), color_(NONE) {};
 };

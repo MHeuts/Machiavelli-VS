@@ -2,11 +2,9 @@
 #include "StateMachine.h"
 #include "deck.h"
 
-class Game {
-public:
-	Game();
-	~Game() = default;
+class Player;
 
+class Game {
 private:
 	std::vector<std::weak_ptr<ClientInfo>> clients;
 	StateMachine stateMachine;
@@ -14,6 +12,8 @@ private:
 	deck deck_;
 
 public:
+	Game();
+	~Game() = default;
 	void HandleClientCommand(const ClientCommand& command);
 
 	static std::shared_ptr<Game> instance();
@@ -23,7 +23,4 @@ public:
 	bool PlayersReady() const { return clients.size() == 2; }
 
 	void setup();
-
-private:
-	void shuffleBuildings();
 };

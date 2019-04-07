@@ -2,7 +2,7 @@
 #include <string>
 #include <utility>
 
-class building_card
+class building_card 
 {
 	std::string name_;
 	int cost_;
@@ -20,5 +20,5 @@ public:
 	void cost(int cost);
 	int cost() const;
 
-	
+	std::string to_string() const { return "name: "+ name_ + "color: " + std::to_string(color_) + "cost: " + std::to_string(cost_); }
 }; 

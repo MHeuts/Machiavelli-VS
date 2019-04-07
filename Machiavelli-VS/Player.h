@@ -38,7 +38,7 @@ public:
 private:
 	std::string name;
 	int _gold;
-	std::vector<Character> _characterHand;
+	std::vector<character> _characterHand;
 	std::vector<building_card> _buildingHand;
 	std::vector<building_card> _city;
 	bool isKing_{ false };

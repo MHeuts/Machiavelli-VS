@@ -17,7 +17,7 @@ void Game::HandleClientCommand(const ClientCommand& command)
 
 static std::shared_ptr<Game> instance_;
 
-std::shared_ptr<Game> Game::instance() 
+std::shared_ptr<Game> Game::instance()
 {
 	if (instance_ == nullptr) instance_ = std::make_shared<Game>();
 	return instance_;
@@ -43,8 +43,4 @@ void Game::setup()
 	}
 	stateMachine.pop_state();
 	stateMachine.push_state<DrawCharacterState>();
-}
-
-void Game::shuffleBuildings()
-{
 }
