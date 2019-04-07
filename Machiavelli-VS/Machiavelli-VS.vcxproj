@@ -156,6 +156,7 @@
     <ClInclude Include="building_deck.h" />
     <ClInclude Include="building_card.h" />
     <ClInclude Include="card.h" />
+    <ClInclude Include="round_start.h" />
     <ClInclude Include="player_deck.h" />
     <ClInclude Include="CircularBuffer.h" />
     <ClInclude Include="ClientCommand.h" />
@@ -210,6 +211,7 @@
     <ClCompile Include="player_card.cpp" />
     <ClCompile Include="preacher.cpp" />
     <ClCompile Include="Random.cpp" />
+    <ClCompile Include="round_start_state.cpp" />
     <ClCompile Include="Socket.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="thief.cpp" />

@@ -2,6 +2,7 @@
 #include "Game.h"
 #include "random.h"
 #include "DrawCharacterState.h"
+#include "round_start.h"
 
 
 DrawCharacterState::DrawCharacterState() : DrawCharacterState(nullptr)
@@ -66,6 +67,6 @@ void DrawCharacterState::update()
 	if (switch_state)
 	{
 		//TODO:
-		//Game::instance()->go_to_state<RoundInitState>(true);
+		Game::instance()->go_to_state<round_start_state>(true);
 	}
 }
