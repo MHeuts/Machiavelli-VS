@@ -13,11 +13,7 @@ void GameOverState::enter_state()
 void GameOverState::showScoreScreen(std::shared_ptr<ClientInfo> client)
 {
 	auto const game = Game::instance();
-
-	if(client == game->client1)
-
-
-	const auto opponent = game->client1 ? game->client2 : game->client1;
+	const auto opponent = client == game->client1 ? game->client2 : game->client1;
 
 	const int buildingScore = calculateBuildingScore(client);
 	const int o_buildingScore = calculateBuildingScore(opponent);
