@@ -1,9 +1,9 @@
 #include "pch.h"
 #include <iostream>
-#include "BuildingDeck.h"
+#include "building_deck.h"
 
 
-void BuildingDeck::reset() noexcept
+void building_deck::reset() noexcept
 {
 	cards.clear();
 
@@ -15,7 +15,7 @@ void BuildingDeck::reset() noexcept
 	}
 }
 
-std::ifstream& operator>>(std::ifstream& ifstream, BuildingDeck& deck) noexcept
+std::ifstream& operator>>(std::ifstream& ifstream, building_deck& deck) noexcept
 {
 	try
 	{
@@ -26,7 +26,7 @@ std::ifstream& operator>>(std::ifstream& ifstream, BuildingDeck& deck) noexcept
 			// Skip purple cards
 			if (vector.at(2) == "purple") continue;
 
-			const auto card = std::make_shared<BuildingCard>(
+			const auto card = std::make_shared<building_card>(
 				vector.at(0), atoi(vector.at(1).c_str()), vector.at(2), vector.at(3)
 				);
 
@@ -43,7 +43,7 @@ std::ifstream& operator>>(std::ifstream& ifstream, BuildingDeck& deck) noexcept
 	return ifstream;
 }
 
-std::ostream& operator<<(std::ostream& ostream, const BuildingDeck& deck) noexcept
+std::ostream& operator<<(std::ostream& ostream, const building_deck& deck) noexcept
 {
 	for (const auto& card : deck.cards)
 	{

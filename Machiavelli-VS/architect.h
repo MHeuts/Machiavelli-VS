@@ -2,10 +2,10 @@
 
 #include "player_card.h"
 
-class builder : public CharacterCard
+class architect : public player_card
 {
 public:
-	builder();
+	architect();
 
 	void ability() const noexcept override;
 

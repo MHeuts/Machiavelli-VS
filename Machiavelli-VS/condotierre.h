@@ -2,10 +2,10 @@
 #include "player_card.h"
 
 
-class Condotierre : public CharacterCard
+class condotierre : public player_card
 {
 public:
-	Condotierre();
+	condotierre();
 
 	void ability_update() const noexcept override;
 };

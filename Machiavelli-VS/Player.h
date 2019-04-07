@@ -10,8 +10,8 @@
 #ifndef Player_h
 #define Player_h
 
-class CharacterCard;
-class BuildingCard;
+class player_card;
+class building_card;
 
 #include <string>
 #include "Socket.h"
@@ -29,8 +29,8 @@ public:
 	int gold = 0;
 	bool is_king = false;
 
-	std::vector<std::shared_ptr<CharacterCard>> character_cards;
-	std::vector<std::shared_ptr<BuildingCard>> building_cards;
+	std::vector<std::shared_ptr<player_card>> character_cards;
+	std::vector<std::shared_ptr<building_card>> building_cards;
 
 	Player() = default;
 
@@ -44,7 +44,7 @@ public:
 
 	void start_turn() noexcept;
 
-	std::shared_ptr<CharacterCard> has_card(const std::shared_ptr<CharacterCard>& card) const noexcept;
+	std::shared_ptr<player_card> has_card(const std::shared_ptr<player_card>& card) const noexcept;
 
 	std::string building_cards_view() const noexcept;
 

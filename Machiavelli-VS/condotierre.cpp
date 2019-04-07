@@ -1,11 +1,11 @@
 #include "pch.h"
 #include "condotierre.h"
-Condotierre::Condotierre() : CharacterCard("Mercenary", "red")
+condotierre::condotierre() : player_card("Mercenary", "red")
 {
 	
 }
 
-void Condotierre::ability_update() const noexcept
+void condotierre::ability_update() const noexcept
 {
 	//Game::instance()->go_to_state<BuildingRemovalState>();
 }

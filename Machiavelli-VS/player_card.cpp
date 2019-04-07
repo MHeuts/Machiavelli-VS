@@ -3,25 +3,25 @@
 #include <utility>
 #include "player_card.h"
 
-CharacterCard::CharacterCard(const std::string name) : CharacterCard(name, "grey")
+player_card::player_card(const std::string name) : player_card(name, "grey")
 {
 }
 
-CharacterCard::CharacterCard(const std::string name, const std::string color) : name(name), color(color)
+player_card::player_card(const std::string name, const std::string color) : name(name), color(color)
 {
 }
 
-bool CharacterCard::operator==(const CharacterCard right) const noexcept
+bool player_card::operator==(const player_card right) const noexcept
 {
 	return order == right.order;
 }
 
-void CharacterCard::build_building(const std::shared_ptr<BuildingCard>& card) const noexcept
+void player_card::build_building(const std::shared_ptr<building_card>& card) const noexcept
 {
 	card->is_built = true;
 }
 
-int CharacterCard::bonus() const noexcept
+int player_card::bonus() const noexcept
 {
 	if (color == "grey") return 0;
 
@@ -37,7 +37,7 @@ int CharacterCard::bonus() const noexcept
 	return bonus;
 }
 
-bool CharacterCard::can_build_buildings(const int number_built) const noexcept
+bool player_card::can_build_buildings(const int number_built) const noexcept
 {
 	return number_built < 8;
 }

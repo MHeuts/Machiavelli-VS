@@ -1,11 +1,11 @@
 #include "pch.h"
 #include "mage.h"
 
-Mage::Mage() : CharacterCard("Mage")
+mage::mage() : player_card("Mage")
 {
 }
 
-void Mage::ability_update() const noexcept
+void mage::ability_update() const noexcept
 {
 	//Game::instance()->go_to_state<BuildingCardSwapState>();
 }

@@ -3,7 +3,7 @@
 #include <string>
 #include "card.h"
 
-class BuildingCard : public Card
+class building_card : public card
 {
 public:
 	const std::string name;
@@ -15,7 +15,7 @@ public:
 	bool protected_card = false;
 	bool is_built = false;
 
-	BuildingCard(std::string name, int price, std::string color, std::string ability) :
+	building_card(std::string name, int price, std::string color, std::string ability) :
 		name(name), price(price), color(color), ability(ability) {};
 
 	std::string to_string() const noexcept override

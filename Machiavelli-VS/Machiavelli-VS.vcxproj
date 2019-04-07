@@ -152,34 +152,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="assassin.h" />
-    <ClInclude Include="builder.h" />
-    <ClInclude Include="BuildingDeck.h" />
+    <ClInclude Include="architect.h" />
+    <ClInclude Include="building_deck.h" />
     <ClInclude Include="building_card.h" />
     <ClInclude Include="card.h" />
-    <ClInclude Include="CharacterDeck.h" />
+    <ClInclude Include="player_deck.h" />
     <ClInclude Include="CircularBuffer.h" />
     <ClInclude Include="ClientCommand.h" />
     <ClInclude Include="ClientInfo.h" />
     <ClInclude Include="color_enum.h" />
     <ClInclude Include="condotierre.h" />
-    <ClInclude Include="csvreader.h" />
+    <ClInclude Include="filereader.h" />
     <ClInclude Include="DrawCharacterState.h" />
-    <ClInclude Include="Ability.h" />
-    <ClInclude Include="ArchitectAbility.h" />
-    <ClInclude Include="AssassinAbility.h" />
-    <ClInclude Include="AssassinationState.h" />
-    <ClInclude Include="BishopAbility.h" />
     <ClInclude Include="Building.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="king.h" />
     <ClInclude Include="mage.h" />
     <ClInclude Include="GameOverState.h" />
-    <ClInclude Include="KingAbility.h" />
     <ClInclude Include="LobbyState.h" />
-    <ClInclude Include="MagicianAbility.h" />
     <ClInclude Include="merchant.h" />
-    <ClInclude Include="MerchantAbility.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="player_card.h" />
@@ -189,11 +181,9 @@
     <ClInclude Include="State.h" />
     <ClInclude Include="Sync_queue.h" />
     <ClInclude Include="thief.h" />
-    <ClInclude Include="ThiefAbility.h" />
     <ClInclude Include="throw.h" />
     <ClInclude Include="Turn.h" />
     <ClInclude Include="TurnState.h" />
-    <ClInclude Include="WarlordAbility.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="assassin.cpp" />
@@ -202,9 +192,8 @@
     <ClCompile Include="character.cpp" />
     <ClCompile Include="CharacterDeck.cpp" />
     <ClCompile Include="condotierre.cpp" />
-    <ClCompile Include="csvreader.cpp" />
+    <ClCompile Include="filereader.cpp" />
     <ClCompile Include="DrawCharacterState.cpp" />
-    <ClCompile Include="AssassinAbility.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="king.cpp" />
     <ClCompile Include="LobbyState.cpp" />

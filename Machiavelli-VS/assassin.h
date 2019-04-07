@@ -1,10 +1,10 @@
 #pragma once
 #include "player_card.h"
 
-class Assassin : public CharacterCard
+class assassin : public player_card
 {
 public:
-	Assassin();
+	assassin();
 
 	void ability_update() const noexcept override;
 };

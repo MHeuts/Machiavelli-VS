@@ -1,9 +1,9 @@
 #include "pch.h"
 #include <vector>
 #include <iostream>
-#include "csvreader.h"
+#include "filereader.h"
 
-std::vector<std::vector<std::string>> CsvReader::process_csv(std::ifstream& ifstream) const
+std::vector<std::vector<std::string>> file_reader::process_csv(std::ifstream& ifstream) const
 {
 	std::vector<std::vector<std::string>> matrix{};
 

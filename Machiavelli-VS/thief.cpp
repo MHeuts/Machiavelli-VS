@@ -1,10 +1,10 @@
 #include "pch.h"
 #include "thief.h"
-Thief::Thief() : CharacterCard("Thief")
+thief::thief() : player_card("Thief")
 {
 }
 
-void Thief::ability_update() const noexcept
+void thief::ability_update() const noexcept
 {
 	//Game::instance()->go_to_state<StealState>();
 }

@@ -26,7 +26,7 @@ void Player::start_turn() noexcept
 	current_turn = Turn();
 }
 
-std::shared_ptr<CharacterCard> Player::has_card(const std::shared_ptr<CharacterCard>& card) const noexcept
+std::shared_ptr<player_card> Player::has_card(const std::shared_ptr<player_card>& card) const noexcept
 {
 	for (const auto& pcard : character_cards)
 	{

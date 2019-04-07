@@ -3,10 +3,10 @@
 #include "Player.h"
 #include "ClientInfo.h"
 #include "ClientCommand.h"
-#include "CharacterDeck.h"
-#include "BuildingDeck.h"
+#include "player_deck.h"
 #include "State.h"
 #include "player_card.h"
+#include "building_deck.h"
 
 class State;
 
@@ -19,10 +19,10 @@ class Game
 public:
 	int round = 0;
 
-	std::shared_ptr<CharacterCard> current_card = nullptr;
+	std::shared_ptr<player_card> current_card = nullptr;
 
-	CharacterDeck character_deck;
-	BuildingDeck building_deck;
+	player_deck character_deck;
+	building_deck building_deck;
 
 	std::shared_ptr<ClientInfo> client1;
 	std::shared_ptr<ClientInfo> client2;

@@ -2,11 +2,11 @@
 #include "Assassin.h"
 #include "Game.h"
 
-Assassin::Assassin() : CharacterCard("Assassin")
+assassin::assassin() : player_card("Assassin")
 {
 }
 
-void Assassin::ability_update() const noexcept
+void assassin::ability_update() const noexcept
 {
 	//Game::instance()->go_to_state<MurderState>();
 }

@@ -1,57 +1,57 @@
 #include "pch.h"
-#include "CharacterDeck.h"
+#include "player_deck.h"
 #include "Thief.h"
 #include "Assassin.h"
 #include "Mage.h"
 #include "King.h"
 #include "Preacher.h"
 #include "Merchant.h"
-#include "builder.h"
+#include "architect.h"
 #include "condotierre.h"
 #include "Socket.h"
 
-void CharacterDeck::make_card(const std::string& name, const int order) noexcept
+void player_deck::make_card(const std::string& name, const int order) noexcept
 {
-	std::shared_ptr<CharacterCard> card = nullptr;
+	std::shared_ptr<player_card> card = nullptr;
 
 	if (name == "Assassin")
 	{
-		card = std::make_shared<Assassin>();
+		card = std::make_shared<assassin>();
 	}
 	else if (name == "Thief")
 	{
-		card = std::make_shared<Thief>();
+		card = std::make_shared<thief>();
 	}
 	else if (name == "Mage")
 	{
-		card = std::make_shared<Mage>();
+		card = std::make_shared<mage>();
 	}
 	else if (name == "King")
 	{
-		card = std::make_shared<King>();
+		card = std::make_shared<king>();
 	}
 	else if (name == "Preacher")
 	{
-		card = std::make_shared<Preacher>();
+		card = std::make_shared<preacher>();
 	}
 	else if (name == "Merchant")
 	{
-		card = std::make_shared<Merchant>();
+		card = std::make_shared<merchant>();
 	}
 	else if (name == "Architect")
 	{
-		card = std::make_shared<builder>();
+		card = std::make_shared<architect>();
 	}
 	else if (name == "Mercenary")
 	{
-		card = std::make_shared<Condotierre>();
+		card = std::make_shared<condotierre>();
 	}
 
 	card->order = order;
 	original_cards.push_back(card);
 }
 
-void CharacterDeck::reset() noexcept
+void player_deck::reset() noexcept
 {
 	// Reset properties
 	for (const auto& card : original_cards)
@@ -63,7 +63,7 @@ void CharacterDeck::reset() noexcept
 	cards = original_cards;
 }
 
-std::ifstream& operator>>(std::ifstream& ifstream, CharacterDeck& deck) noexcept
+std::ifstream& operator>>(std::ifstream& ifstream, player_deck& deck) noexcept
 {
 	try
 	{
@@ -84,7 +84,7 @@ std::ifstream& operator>>(std::ifstream& ifstream, CharacterDeck& deck) noexcept
 	return ifstream;
 }
 
-std::ostream& operator<<(std::ostream& ostream, CharacterDeck& deck) noexcept
+std::ostream& operator<<(std::ostream& ostream, player_deck& deck) noexcept
 {
 	for (const auto& card : deck.cards)
 	{
@@ -94,7 +94,7 @@ std::ostream& operator<<(std::ostream& ostream, CharacterDeck& deck) noexcept
 	return ostream;
 }
 
-std::string CharacterDeck::to_string() const noexcept
+std::string player_deck::to_string() const noexcept
 {
 	std::stringstream output;
 
@@ -109,7 +109,7 @@ std::string CharacterDeck::to_string() const noexcept
 	return output.str();
 }
 
-std::string CharacterDeck::print_original_cards() const noexcept
+std::string player_deck::print_original_cards() const noexcept
 {
 	std::stringstream output;
 
@@ -122,7 +122,7 @@ std::string CharacterDeck::print_original_cards() const noexcept
 	return output.str();
 }
 
-std::vector<std::shared_ptr<CharacterCard>> CharacterDeck::get_original_cards() const noexcept
+std::vector<std::shared_ptr<player_card>> player_deck::get_original_cards() const noexcept
 {
 	return original_cards;
 }

@@ -1,14 +1,14 @@
 #pragma once
-#include "BuildingDeck.h"
+#include "building_deck.h"
 #include "player_card.h"
 
 
-class Preacher : public CharacterCard
+class preacher : public player_card
 {
 public:
-	Preacher();
+	preacher();
 
 	void ability() const noexcept override;
 
-	void build_building(const std::shared_ptr<BuildingCard>& card) const noexcept override;
+	void build_building(const std::shared_ptr<building_card>& card) const noexcept override;
 };

@@ -1,21 +1,16 @@
 #pragma once
 #include <string>
-#include <utility>
-#include "color_enum.h"
-#include "Character.h"
+#include <memory>
+#include "card.h"
+#include "building_card.h"
 
 class Player;
 
-#include <string>
-#include <memory>
-#include "Card.h"
-#include "Player.h"
-
-class CharacterCard : public Card
+class player_card : public card
 {
 protected:
-	explicit CharacterCard(std::string name);
-	explicit CharacterCard(std::string name, std::string color);
+	explicit player_card(std::string name);
+	explicit player_card(std::string name, std::string color);
 
 public:
 	bool robbed = false;
@@ -32,11 +27,11 @@ public:
 
 	virtual void ability_update() const noexcept {}
 
-	bool operator==(CharacterCard right) const noexcept;
+	bool operator==(player_card right) const noexcept;
 
 	virtual int bonus() const noexcept;
 
-	virtual void build_building(const std::shared_ptr<BuildingCard>& card) const noexcept;
+	virtual void build_building(const std::shared_ptr<building_card>& card) const noexcept;
 
 	virtual bool can_build_buildings(int number_built) const noexcept;
 };

@@ -2,18 +2,18 @@
 #include "merchant.h"
 #include "Game.h"
 
-Merchant::Merchant() : CharacterCard("Merchant", "green")
+merchant::merchant() : player_card("Merchant", "green")
 {
 }
 
-void Merchant::ability() const noexcept
+void merchant::ability() const noexcept
 {
 	Game::instance()->current_client->set_message(
 		"Info: The merchant will receive a piece of gold when it's his turn."
 	);
 }
 
-int Merchant::bonus() const noexcept
+int merchant::bonus() const noexcept
 {
-	return CharacterCard::bonus() + 1;
+	return player_card::bonus() + 1;
 }

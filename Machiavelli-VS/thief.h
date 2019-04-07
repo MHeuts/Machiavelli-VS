@@ -2,10 +2,10 @@
 #include "player_card.h"
 
 
-class Thief : public CharacterCard
+class thief : public player_card
 {
 public:
-	Thief();
+	thief();
 
 	void ability_update() const noexcept override;
 };

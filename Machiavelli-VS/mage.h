@@ -3,10 +3,10 @@
 #include "player_card.h"
 
 
-class Mage : public CharacterCard
+class mage : public player_card
 {
 public:
-	Mage();
+	mage();
 
 	void ability_update() const noexcept override;
 };

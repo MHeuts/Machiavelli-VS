@@ -3,10 +3,10 @@
 #include <fstream>
 #include <vector>
 
-class CsvReader
+class file_reader
 {
 protected:
-	CsvReader() = default;
+	file_reader() = default;
 
 public:
 	std::vector<std::vector<std::string>> process_csv(std::ifstream& ifstream) const;

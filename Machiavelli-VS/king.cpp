@@ -2,11 +2,11 @@
 #include "King.h"
 #include "Game.h"
 
-King::King() : CharacterCard("King", "yellow")
+king::king() : player_card("King", "yellow")
 {
 }
 
-void King::ability() const noexcept
+void king::ability() const noexcept
 {
 	Game::instance()->current_client->set_message(
 		"Info: The king gives you the upper hand when selecting new character cards."
