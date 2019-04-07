@@ -24,7 +24,9 @@ public:
 	static std::shared_ptr<Game> instance();
 	void AddClient(std::shared_ptr<ClientInfo> client);
 
-	int getCurrentPlayer() const { return currentPlayer_; }
+	deck getDeck() { return deck_; }
+
+	size_t getCurrentPlayer() const { return currentPlayer_; }
 	int getKing() const { return currentKing_; }
 
 	void setKing(int king) { currentKing_ = king; }

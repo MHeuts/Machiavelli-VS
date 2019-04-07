@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "deck.h"
+#include <random>
 #include "random.h"
 #include "file_reader.h"
 
@@ -18,6 +19,20 @@ building_card deck::get_card()
 	return card;
 }
 
+player_card deck::get_character_card()
+{
+	auto card = player_cards_.back();
+	player_cards_.pop_back();
+	return card;
+}
+
+player_card deck::get_character_card(int index)
+{
+	auto card = player_cards_.at(index);
+	player_cards_.erase(player_cards_.begin() + index);
+	return card;
+}
+
 std::vector<building_card> deck::get_cards(int ammount)
 {
 	std::vector<building_card> cards;
@@ -27,7 +42,7 @@ std::vector<building_card> deck::get_cards(int ammount)
 	return cards;
 }
 
-void deck::BuildDeck()
+void deck::BuildBuildingDeck()
 {
 	building_cards_.clear();
 
@@ -36,8 +51,17 @@ void deck::BuildDeck()
 	shuffle();
 }
 
+void deck::BuildCharacterDeck()
+{
+	player_cards_.clear();
+
+	filereader fr;
+	player_cards_ = fr.read_player_cards();
+	std::shuffle(player_cards_.begin(), player_cards_.end(), std::mt19937(std::random_device()()));
+}
+
 void deck::shuffle()
 {
-	std::random_shuffle(building_cards_.begin(), building_cards_.end());
+	std::shuffle(building_cards_.begin(), building_cards_.end(), std::mt19937(std::random_device()()));
 }
 

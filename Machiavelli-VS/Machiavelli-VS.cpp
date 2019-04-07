@@ -46,7 +46,7 @@ void consume_command() // runs in its own thread
 					Game::instance()->HandleClientCommand(command);
 
 					// TODO handle command here
-					client << player.get_name() << ", you wrote: '" << command.get_cmd() << "', but I'll ignore that for now.\r\n" << machiavelli::prompt;
+					//client << player.get_name() << ", you wrote: '" << command.get_cmd() << "', but I'll ignore that for now.\r\n" << machiavelli::prompt;
 				}
 				catch (const exception& ex) {
 					cerr << "*** exception in consumer thread for player " << player.get_name() << ": " << ex.what() << '\n';

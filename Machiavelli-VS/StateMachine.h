@@ -28,4 +28,9 @@ public:
 	{
 		stateStack.back()->handle_command(command);
 	}
+
+	void update()
+	{
+		
+	}
 };

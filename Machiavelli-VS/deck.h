@@ -19,9 +19,13 @@ public:
 		shuffle();
 	}
 
-	void BuildDeck();
+	void BuildCharacterDeck();
+	void BuildBuildingDeck();
 
 	building_card get_card();
+	player_card get_character_card();
+	player_card get_character_card(int index);
+
 
 	std::vector<building_card> get_cards(int ammount);
 
